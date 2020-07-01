@@ -1,0 +1,138 @@
+
+
+
+#about-us {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.blurred_image > img{
+    width: 100%;
+    height: 390px;
+    opacity: 0.6;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+}
+.blurred_image {
+    background-image: linear-gradient(60deg, red, grey);
+}
+div > .about_us_text {
+    position: absolute;
+    top: 2em;
+    right: 1em;
+    bottom: 3em;
+    left: 10em;
+    font-size: 5em;
+    color: white;
+    text-shadow: 3px 0 1px rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.about_us_text > .about_content {
+    position: relative;
+    top: -50px;
+    font-size: 24px;
+    color: black;
+    flex: 1;
+    text-shadow: none;
+    font-weight: normal;
+    line-height: 10px;
+}
+
+.container {
+    position: relative;
+    left: 4%;
+    width: 90vw;
+    background-color: gray;
+    background-image: linear-gradient( rgb(224, 224, 224), rgb(54, 30, 30));
+    margin-top: 50px;
+    border-radius: 3px;
+}
+
+#team_title {
+    font-size: 5em;
+    color: ivory;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 15px;
+    position: relative;
+    top: 50px;
+    text-shadow: 2px 1px 1px rgb(131, 54, 54);
+}
+.container #teambg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+}
+
+.team {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center; 
+    margin-top: 150px;
+}
+.team h1 {
+    text-align: center;
+}
+.team .author_section {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-ar;
+    width: 90%;
+    min-height: 400px;
+    margin-top: 20px;
+    z-index: 1;
+}
+.team > .author_section .author {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: baseline;
+    color: white;
+}
+
+.team > .author_section .author img {
+    position: relative;
+    left: 35%;
+    height: 150px;
+    width: 150px;
+    transition: width, 2s, ease-out 1s;
+}
+
+.team > .author_section .author img:hover {
+    width: 200px;
+    height: 200px;
+    border: 2px solid yellowgreen;
+    border-radius: 50%;
+}
+
+
+.author > h3 {
+    position: relative;
+    left: 37%;
+}
+
+.author p {
+    text-align: center;
+}
+
+.author p .email {
+    line-height: 100px;
+}
+
+.author p .email a {
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+

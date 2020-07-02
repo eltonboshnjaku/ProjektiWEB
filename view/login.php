@@ -42,9 +42,10 @@ include ('registerUsers.php');
                             
                             <a  id="registerButton"  href="register.php"  >Register</a> 
                        </div>
+                       
                     </div>
                
-                    
+                    <span style="color:red;"><?=  $loginFailed ?></span>
                     
                 </div>
                
@@ -62,7 +63,7 @@ include ('registerUsers.php');
         </div>
 
        
-<script src="../js/loginRegister.js"></script>
+
 
 
   

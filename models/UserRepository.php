@@ -62,4 +62,44 @@ public function getUsers(){
 echo '</table>';
 
 }
+
+public function checkUser($username,$password){
+  
+   
+
+    $sql="SELECT * FROM Useri WHERE username=:uname and pw=:pass";
+    $stmt = $this->connection->prepare($sql);
+    $stmt->execute(
+        array(
+            'uname' => $username,
+            'pass' => $password
+            
+        )
+        );
+        $count = $stmt->rowCount();
+        if($count == 1){
+            return true;
+        }else{
+            return false;
+        }
+}
+
+public function userExist( $username){
+   
+
+    $sql="SELECT * FROM Useri WHERE username=:username ";
+    $stmt = $this->connection->prepare($sql);
+    $stmt->execute(
+        array(
+            'username' => $username
+            
+        )
+        );
+        $count = $stmt->rowCount();
+        if($count > 0){
+            return true;
+        }else{
+            return false;
+        }
+}
 }

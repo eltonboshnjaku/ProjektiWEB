@@ -5,13 +5,15 @@ class UserRepository{
     private $connection;
     private $useri;
 
-public function __construct(Useri $user){
-    $this->useri=$user;
+public function __construct(){
+    
     $conn=new dataBaseConnection();
     $this->connection=$conn->startConnection();
 }
 
-public function create(){
+public function create(Useri $user){
+    $this->useri=$user;
+
     $sql="INSERT INTO Useri (username,pw,email,role) Values (:username,:passw,:email,:roli)";
 
      $usern = $this->useri->getUsername();
@@ -31,7 +33,33 @@ public function create(){
 }
 
 public function getUsers(){
-    
-}
+   
+    $sql="SELECT * FROM Useri";
+    $stmt = $this->connection->query($sql);
 
+    echo 
+    '<table width="70%" border="1"  >
+    <tr>
+    <th>ID:</th>
+    <th>USERNAME:</th>
+    <th>PASSWORD:</th>
+    <th>EMAIL:</th>
+    <th>ROLE:</th>
+    </tr>';
+
+    foreach($stmt as $row){
+        echo '
+        <tr>
+        <td>'.$row['id'].'</td>
+        <td>'.$row['username'].'</td>
+        <td>'.$row['pw'].'</td>
+        <td>'.$row['email'].'</td>
+        <td>'.$row['role'].'</td>
+
+
+        </tr>';
+    }
+echo '</table>';
+
+}
 }

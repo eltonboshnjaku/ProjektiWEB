@@ -8,8 +8,15 @@ class userController{
     public function createUser($username,$password,$email,$role){
 
         $user=new Useri($username,$password,$email,$role);
-        $userRepository = new UserRepository($user);
-        $userRepository->create();
+        $userRepository = new UserRepository();
+        $userRepository->create($user);
+
+    }
+    public function getUsers(){
+
+        
+        $userRepository = new UserRepository();
+        $userRepository->getUsers();
 
     }
 }

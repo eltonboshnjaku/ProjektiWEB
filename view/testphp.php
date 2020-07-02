@@ -1,10 +1,8 @@
 
 
-<html>
-<body>
+<?php
 
-Welcome <?php echo $_POST["name"]; ?><br>
-Your email address is: <?php echo $_POST["email"]; ?>
+include_once '../controller/UserController.php';
 
-</body>
-</html>
+$userController= new userController();
+$userController->getUsers();

@@ -28,6 +28,7 @@ if(isset($_POST['loginButton'])){
 
      $sql="SELECT * FROM Useri";
       $stmt = $connection->query($sql);
+      $i=0;
       foreach($stmt as $row){
           
        $id= $row['id'];
@@ -124,10 +125,10 @@ if(isset($_POST['loginButton'])){
         //    $registerUsername='';
         //    $registerPassword='';
         //  break;
-        if($i==$stmt->rowCount()){
+        //if($i==$stmt->rowCount()){
         $registerSuccess='Your registration was successful!';
         break;
-        }
+       // }
        }
       }
  

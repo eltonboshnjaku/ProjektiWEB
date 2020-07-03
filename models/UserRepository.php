@@ -32,74 +32,94 @@ public function create(Useri $user){
     $statement->execute();
 }
 
-public function getUsers(){
+// public function getUsers(){
    
-    $sql="SELECT * FROM Useri";
-    $stmt = $this->connection->query($sql);
+//     $sql="SELECT * FROM Useri";
+//     $stmt = $this->connection->query($sql);
 
-    echo 
-    '<table width="70%" border="1"  >
-    <tr>
-    <th>ID:</th>
-    <th>USERNAME:</th>
-    <th>PASSWORD:</th>
-    <th>EMAIL:</th>
-    <th>ROLE:</th>
-    </tr>';
+//     echo 
+//     '<table width="70%" border="1"  >
+//     <tr>
+//     <th>ID:</th>
+//     <th>USERNAME:</th>
+//     <th>PASSWORD:</th>
+//     <th>EMAIL:</th>
+//     <th>ROLE:</th>
+//     </tr>';
 
-    foreach($stmt as $row){
-        echo '
-        <tr>
-        <td>'.$row['id'].'</td>
-        <td>'.$row['username'].'</td>
-        <td>'.$row['pw'].'</td>
-        <td>'.$row['email'].'</td>
-        <td>'.$row['role'].'</td>
+//     foreach($stmt as $row){
+//         echo '
+//         <tr>
+//         <td>'.$row['id'].'</td>
+//         <td>'.$row['username'].'</td>
+//         <td>'.$row['pw'].'</td>
+//         <td>'.$row['email'].'</td>
+//         <td>'.$row['role'].'</td>
 
 
-        </tr>';
-    }
-echo '</table>';
+//         </tr>';
+//     }
+// echo '</table>';
 
-}
+// }
 
-public function checkUser($username,$password){
-  
+
+
+// public function userExist( $username){
    
 
-    $sql="SELECT * FROM Useri WHERE username=:uname and pw=:pass";
-    $stmt = $this->connection->prepare($sql);
-    $stmt->execute(
-        array(
-            'uname' => $username,
-            'pass' => $password
+//     $sql="SELECT * FROM Useri WHERE username=:username ";
+//     $stmt = $this->connection->prepare($sql);
+    
+ 
+//      $stmt->execute(
+//          array(
+//              'username' => $username
             
-        )
-        );
-        $count = $stmt->rowCount();
-        if($count == 1){
-            return true;
-        }else{
-            return false;
-        }
+//        )
+//          );
+//         $count = $stmt->rowCount();
+//         if($count > 0){
+//             return true;
+//         }else{
+//             return false;
+//         }
+// }
+
+
+//  public function isRegistered($usern,$pw){
+//      $conn=new dataBaseConnection();
+//      $connection=$conn->startConnection();
+//     $sql="SELECT * FROM Useri";
+//       $stmt = $connection->query($sql);
+//       foreach($stmt as $row){
+//         $id= $row['id'];
+//         $username=$row['username'];
+//         $password=$row['pw'];
+//         $email=$row['email'];
+//         $role=$row['role'];
+//         $user= new Useri($username,$password,$email,$role);
+//         if($usern == $user->getUsername() && $pw==$user->getPassword()){
+//           return true;
+//           break;
+//         }else{
+//           return false;
+//           break;
+//         }
+
+       
+
+//      }
+ }
+
+
+    
+
+
 }
 
-public function userExist( $username){
-   
 
-    $sql="SELECT * FROM Useri WHERE username=:username ";
-    $stmt = $this->connection->prepare($sql);
-    $stmt->execute(
-        array(
-            'username' => $username
-            
-        )
-        );
-        $count = $stmt->rowCount();
-        if($count > 0){
-            return true;
-        }else{
-            return false;
-        }
-}
-}
+
+
+
+

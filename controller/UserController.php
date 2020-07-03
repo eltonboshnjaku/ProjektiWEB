@@ -14,30 +14,17 @@ class userController{
     }
 
     
-    public function getUsers(){
+    // public function  userExist($username){
 
         
-        $userRepository = new UserRepository();
-        $userRepository->getUsers();
+    //     $userRepository = new UserRepository();
+    //   return  $userRepository->userExist($username);
 
-    }
+    // }
 
-
-    public function checkUser($username,$password){
-
+    // public function isRegistered($usern,$pw){
+    //     $userRepository = new UserRepository();
+    //     return $userRepository->isRegistered($usern,$pw);
         
-        $userRepository = new UserRepository();
-        $userRepository->checkUser($username,$password);
-
-    }
-
-
-
-    public function  userExist($username){
-
-        
-        $userRepository = new UserRepository();
-        $userRepository-> userExist($username);
-
-    }
+    // }
 }

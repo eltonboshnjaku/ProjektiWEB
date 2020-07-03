@@ -1,4 +1,5 @@
 <?php
+include_once '../models/DBConnection.php';
 include_once '../controller/UserController.php';
 
 $loginUsernameError=$loginPasswordError=$loginFailed=$registerEmailError=$registerUsernameError=$registerPasswordError=$registerSuccess="";
@@ -20,23 +21,40 @@ if(isset($_POST['loginButton'])){
       
   }
 
+ 
   if(!empty($_POST['usern']) && !empty($_POST['pw'])){
+     $conn=new dataBaseConnection();
+     $connection=$conn->startConnection();
 
-    $userController = new userController();
-    $userController->checkUser( $loginUsername,$loginPassword);
-
-  if($userController){
+     $sql="SELECT * FROM Useri";
+      $stmt = $connection->query($sql);
+      foreach($stmt as $row){
+          
+       $id= $row['id'];
+       $username=$row['username'];
+       $password=$row['pw'];
+        $email=$row['email'];
+        $role=$row['role'];
+        $user= new Useri($username,$password,$email,$role);
+        if($_POST['usern'] == $user->getUsername() && $_POST['pw']==$user->getPassword()){
+          header('location:home.html');
+       break;
+        }else{
+          if($i==$stmt->rowCount()){
+            $loginFailed="Username or Password is incorrect!";
+            break;
+            }
+         
+        
+      }
+     }
+  
+  
     
-    header('location:home.html');
-  }else{
-    $loginFailed="Username or Password is incorrect!";
-   
-  }
-    
   }
 
 
-
+  
 
   
     
@@ -77,24 +95,42 @@ if(isset($_POST['loginButton'])){
     if(preg_match("/[a-zA-Z0-9._-]{1,}@[a-zA-Z-_.]{1,}/",$_POST['email']) &&
      preg_match("/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[?!])[a-zA-Z0-9?!]{7,}/",$_POST['password']) ){
     
-      $userController = new userController();
-      $userController->userExist($_POST['username']);
-
-  if($userController){
-    $registerUsernameError='Username exist!';
-  }else{
-    $registerEmail=$_POST['email'];
-    $registerUsername=$_POST['username'];
-    $registerPassword=$_POST['password'];
+      $conn=new dataBaseConnection();
+      $connection=$conn->startConnection();
+ 
+      $sql="SELECT * FROM Useri";
+       $stmt = $connection->query($sql);
+       $i=0;
+       foreach($stmt as $row){
+           
+           $id= $row['id'];
+           $username=$row['username'];
+           $password=$row['pw'];
+           $email=$row['email'];
+           $role=$row['role'];
+           $user= new Useri($username,$password,$email,$role);
+         if($_POST['username'] == $user->getUsername()){
+           $registerUsernameError='Username exist!';
+           break;
+         }else{
+        //    $registerEmail=$_POST['email'];
+        //    $registerUsername=$_POST['username'];
+        //    $registerPassword=$_POST['password'];
     
-    create( $registerEmail,$registerUsername,$registerPassword);
-    $registerSuccess='Your registration was successful!';
+        //    create( $registerEmail,$registerUsername,$registerPassword);
+        //    $registerSuccess='Your registration was successful!';
 
-    $registerEmail='';
-    $registerUsername='';
-    $registerPassword='';
-
-  }
+        //    $registerEmail='';
+        //    $registerUsername='';
+        //    $registerPassword='';
+        //  break;
+        if($i==$stmt->rowCount()){
+        $registerSuccess='Your registration was successful!';
+        break;
+        }
+       }
+      }
+ 
 
 
 

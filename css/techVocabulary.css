@@ -5,7 +5,7 @@ body {
     list-style-type: none;
     display: flex;
     width: 98vw;
-    background-color:rgb(34, 33, 33) ;
+    /* background-color:rgb(34, 33, 33) ; */
     position: sticky;
     top: 0px;
     margin: 0;
@@ -24,7 +24,7 @@ body {
    width: 75vw;
   
     height: 15vh;
-    margin-top: 25px;
+    margin-top: 2.5vh;
     
     
 }

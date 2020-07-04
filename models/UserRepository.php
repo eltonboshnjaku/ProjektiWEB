@@ -32,37 +32,38 @@ public function create(Useri $user){
     $statement->execute();
 }
 
-// public function getUsers(){
+ public function getUsers(){
    
-//     $sql="SELECT * FROM Useri";
-//     $stmt = $this->connection->query($sql);
+     $sql="SELECT * FROM Useri";
+    $stmt = $this->connection->query($sql);
 
-//     echo 
-//     '<table width="70%" border="1"  >
-//     <tr>
-//     <th>ID:</th>
-//     <th>USERNAME:</th>
-//     <th>PASSWORD:</th>
-//     <th>EMAIL:</th>
-//     <th>ROLE:</th>
-//     </tr>';
+     echo 
+     '<table width="87%" border="1" style="color:rgb(241, 166, 4); " >
+     <tr>
+     <th style="background:rgb(34, 33, 33);">ID:</th>
+     <th style="background:rgb(34, 33, 33);">USERNAME:</th>
+     <th style="background:rgb(34, 33, 33);">PASSWORD:</th>
+     <th style="background:rgb(34, 33, 33);">EMAIL:</th>
+     <th style="background:rgb(34, 33, 33);">ROLE:</th>
+     </tr>';
 
-//     foreach($stmt as $row){
-//         echo '
-//         <tr>
-//         <td>'.$row['id'].'</td>
-//         <td>'.$row['username'].'</td>
-//         <td>'.$row['pw'].'</td>
-//         <td>'.$row['email'].'</td>
-//         <td>'.$row['role'].'</td>
+     foreach($stmt as $row){
+         echo '
+         <tr>
+         <td style="background:white; color:black;">'.$row['id'].'</td>
+         <td style="background:white; color:black;">'.$row['username'].'</td>
+         <td style="background:white; color:black;">'.$row['pw'].'</td>
+         <td style="background:white; color:black;">'.$row['email'].'</td>
+         <td style="background:white; color:black;">'.$row['role'].'</td>
 
 
-//         </tr>';
-//     }
-// echo '</table>';
+         </tr>';
+     }
+ echo '</table>';
 
-// }
+ }
 
+ 
 
 
 // public function userExist( $username){

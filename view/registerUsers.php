@@ -45,6 +45,10 @@ if(isset($_POST['loginButton'])){
         $user= new Useri($username,$password,$email,$role);
        
         if($_POST['usern'] == $user->getUsername() && $_POST['pw']==$user->getPassword()){
+          if($user->getRoli() == 'admin'){
+           
+            header('location:home.html');
+          }
           header('location:home.html');
        break;
         }else{
@@ -171,6 +175,7 @@ function create($email,$username,$password){
 
   
 }
+
 
 
 

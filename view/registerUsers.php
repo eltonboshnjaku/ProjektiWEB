@@ -26,9 +26,15 @@ if(isset($_POST['loginButton'])){
      $conn=new dataBaseConnection();
      $connection=$conn->startConnection();
 
-     $sql="SELECT * FROM Useri";
+      $sql="SELECT * FROM Useri";
       $stmt = $connection->query($sql);
-      $i=0;
+
+      $rows = "SELECT count(*) FROM Useri"; 
+      $result = $connection->prepare($rows); 
+      $result->execute(); 
+      $number_of_rows = $result->fetchColumn();
+
+      $i=1;
       foreach($stmt as $row){
           
        $id= $row['id'];
@@ -37,17 +43,21 @@ if(isset($_POST['loginButton'])){
         $email=$row['email'];
         $role=$row['role'];
         $user= new Useri($username,$password,$email,$role);
+       
         if($_POST['usern'] == $user->getUsername() && $_POST['pw']==$user->getPassword()){
           header('location:home.html');
        break;
         }else{
-          if($i==$stmt->rowCount()){
+        
+          if($i==$number_of_rows){
+          
             $loginFailed="Username or Password is incorrect!";
             break;
             }
          
         
       }
+      $i++;
      }
   
   
@@ -79,7 +89,7 @@ if(isset($_POST['loginButton'])){
   if(empty($_POST['username'])){
     $registerUsernameError='Username is required!';
   }else{
-   
+    $registerUsername=$_POST['username'];
   }
   if(empty($_POST['password'])){
     $registerPasswordError='Password is required!';
@@ -101,9 +111,15 @@ if(isset($_POST['loginButton'])){
  
       $sql="SELECT * FROM Useri";
        $stmt = $connection->query($sql);
-       $i=0;
+
+       $rows = "SELECT count(*) FROM Useri"; 
+       $result = $connection->prepare($rows); 
+       $result->execute(); 
+       $number_of_rows = $result->fetchColumn();
+
+       $i=1;
        foreach($stmt as $row){
-           
+       
            $id= $row['id'];
            $username=$row['username'];
            $password=$row['pw'];
@@ -114,21 +130,25 @@ if(isset($_POST['loginButton'])){
            $registerUsernameError='Username exist!';
            break;
          }else{
-        //    $registerEmail=$_POST['email'];
-        //    $registerUsername=$_POST['username'];
-        //    $registerPassword=$_POST['password'];
-    
-        //    create( $registerEmail,$registerUsername,$registerPassword);
-        //    $registerSuccess='Your registration was successful!';
+          
+         
+        if($i==$number_of_rows){
 
-        //    $registerEmail='';
-        //    $registerUsername='';
-        //    $registerPassword='';
-        //  break;
-        //if($i==$stmt->rowCount()){
-        $registerSuccess='Your registration was successful!';
-        break;
-       // }
+          $registerEmail=$_POST['email'];
+          $registerUsername=$_POST['username'];
+          $registerPassword=$_POST['password'];
+    
+          create( $registerEmail,$registerUsername,$registerPassword);
+          $registerSuccess='Your registration was successful!';
+
+          $registerEmail='';
+          $registerUsername='';
+          $registerPassword='';
+          $registerSuccess='Your registration was successful!';
+          break;
+        }
+
+       $i++;
        }
       }
  

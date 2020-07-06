@@ -16,7 +16,7 @@ body {
    height: 70vh;
 
     background: rgba(0,0,0,0.5);
-    margin-left: 25%;
+    margin-left:0;
      margin-top: 15vh; 
 }
 
@@ -170,4 +170,49 @@ button:hover {
 
 .hidden {
     display: none;
+}
+
+.allContent{
+    display: flex;
+   justify-content: baseline;
+}
+.webInfo{    
+    width: 22vw;
+    margin-left: 1.5vw;
+    margin-right:1.5vw;
+    margin-top: 15vh;
+    height: 70vh;
+}
+.title
+{
+
+    width: 22vw;
+    height: 20vh;
+    margin-top: 0px;
+    text-align: center; 
+   
+    
+   
+  
+}
+.maintitle{
+   
+    text-decoration: none;
+    color: black;
+     font-family: 'Segoe Print';
+    
+    font-size: 3vw;
+   
+}
+.maintitle:hover{
+    color:rgb(241, 166, 4);
+}
+.webInfo p a{
+    text-decoration: none;
+    color:rgb(241, 166, 4);
+    
+}
+.webInfo p a:hover{
+    color: white;
+    text-decoration: underline;
 }

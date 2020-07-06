@@ -34,7 +34,32 @@
 
           <div class = "main">
             <div class="kursetHTML">
-                <ul>
+            <?php
+include_once '../models/DBConnection.php';
+          $conn=new dataBaseConnection();
+          $connection=$conn->startConnection();
+   
+         $sql="SELECT * FROM course WHERE courseName='html' ";
+         $stmt = $connection->query($sql);
+   
+       
+        
+         foreach($stmt as $row){
+             
+          $id= $row['id'];
+          $courseName=$row['courseName'];
+          $chapterNumber=$row['chapterNumber'];
+           $title=$row['title'];
+           $head=$row['head'];
+           $body=$row['body'];
+           $photo=$row['photo'];
+          echo "<ul>
+          <li><a href='#.$title'>$title</a></li>
+          </ul>
+          ";
+         }
+           ?>
+                <!-- <ul>
                     <li><a href="#intro">Introduction</a></li>
                     <li><a href="#syntax">Syntax</a> </li>
                     <li><a href="#comments">Comments</a> </li>
@@ -52,11 +77,11 @@
                     <li><a href="">Functions</a> </li>
                     <li><a href="">Arrays</a> </li>
                     <li><a href="">Superglobals</a> </li>
-                </ul>
+                </ul> -->
             </div>
             <div class="allCourses">
                 <div class = "content">
-                    <h1 id="intro">PHP Introduction</h1>
+                    <!-- <h1 id="intro">PHP Introduction</h1>
             
                     <h3>What is PHP?</h3>
                     <ul>
@@ -193,7 +218,33 @@
                         </div>
                     </section>
 
-                    <button><a href="#syntax">Go to previous chapter</a></button>
+                    <button><a href="#syntax">Go to previous chapter</a></button> -->
+
+                    <?php
+            include_once '../models/DBConnection.php';
+                      $conn=new dataBaseConnection();
+                      $connection=$conn->startConnection();
+               
+                     $sql="SELECT * FROM course WHERE courseName='html'";
+                     $stmt = $connection->query($sql);
+               
+                   
+                    
+                     foreach($stmt as $row){
+                         
+                      $id= $row['id'];
+                      $courseName=$row['courseName'];
+                      $chapterNumber=$row['chapterNumber'];
+                       $title=$row['title'];
+                       $head=$row['head'];
+                       $body=$row['body'];
+                       $photo=$row['photo'];
+                       echo "<h1 style='width:60vw; font-family: Arial; id=$title'>$chapterNumber.  $title</h1>";
+                       echo "<h3 style='width:60vw; font-family: Arial;'>$head</h3>";
+                       echo "<p style='width:60vw; font-family: Arial;'>$body</p>";
+                       echo '<img src="$photo" >';
+                     }
+                       ?>
 
                 </div>
             </div>

@@ -1,3 +1,17 @@
+<?php
+//session_start();
+include_once 'createCourses.php';
+include_once 'registerUsers.php';
+
+
+$roli=$_SESSION['role'];
+if($roli=='user'){
+  $hide='hide';
+}else{
+  $hide="";
+}
+ 
+?>
 <!DOCTYPE html>
 
 <html>
@@ -7,6 +21,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="../css/home_style.css">
+        <style>
+        .hide{
+          display:none;
+        }
+        </style>
         
     </head>
 
@@ -46,7 +65,9 @@
                 <li ><a class="bar_item" href="tutorials.html">Tutorials</a> </li>
                <li ><a class="bar_item" href="techVocabulary.html">Tech Vocabulary</a> </li>
                <li ><a class="bar_item" href="aboutUs.html">About Us</a> </li>
-               <li><a class="bar_item" href="login.php">Log Out</a>
+                <li ><a id="admDashboard" class="bar_item <?=$hide?>  " href="adminDashboard.php">Dashboard</a> </li> 
+               
+               <li><a class="bar_item " href="login.php">Log Out</a>
                
 
            </ul>
@@ -418,7 +439,7 @@
                   </ul>
               </div>
             <div class="footer-section contact" style="width: 40vw;">
-                <form action="">
+                <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
                   <h3>Feedback</h3>
                     <textarea name = "feedback" cols = "50" rows = "4" placeholder = "Suggest us..."></textarea>
                     <br>
@@ -428,8 +449,9 @@
                         <label for = "email"></label>
                         <input style="width: 15vw;" type = "email" id="email" name = "email" placeholder="Your email" />
                     </div>
-                    <button type = "submit" style="width: 8vw;">Save</button>
+                    <button type = "submit" style="width: 8vw;" name="saveButton">Save</button>
                 </form>
+                <span></span>
             </div>
           </div>
         </div>

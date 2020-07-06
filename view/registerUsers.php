@@ -1,10 +1,12 @@
 <?php
+session_start();
 include_once '../models/DBConnection.php';
 include_once '../controller/UserController.php';
 
 $loginUsernameError=$loginPasswordError=$loginFailed=$registerEmailError=$registerUsernameError=$registerPasswordError=$registerSuccess="";
 $loginUsername=$loginPassword=$registerEmail=$registerUsername=$registerPassword="";
-
+$hideClass="";
+$uname=$pas=$mail="";
 if(isset($_POST['loginButton'])){
   
   if(empty($_POST['usern'])){
@@ -45,11 +47,30 @@ if(isset($_POST['loginButton'])){
         $user= new Useri($username,$password,$email,$role);
        
         if($_POST['usern'] == $user->getUsername() && $_POST['pw']==$user->getPassword()){
-          if($user->getRoli() == 'admin'){
+          $uname= $user->getUsername();
+          $pas=$user->getPassword();
+          $mail=$user->getEmail();
+          
+         
+
+        
+        $_SESSION['role']=$user->getRoli();
+        $_SESSION['username']=$user->getUsername();
+        $_SESSION['password']=$user->getPassword();
+        $_SESSION['email']=$user->getEmail();
+          
+          // if($user->getRoli()=='admin'){
            
-            header('location:home.html');
-          }
-          header('location:home.html');
+          //   header('location:home.php');
+          // }
+          
+            
+         
+            
+            header('location:home.php');
+          
+          
+            
        break;
         }else{
         
@@ -167,6 +188,8 @@ if(isset($_POST['loginButton'])){
   
 }
 
+
+
 function create($email,$username,$password){
   $role='user';
   
@@ -182,4 +205,5 @@ function create($email,$username,$password){
 
 
 ?>
+
 

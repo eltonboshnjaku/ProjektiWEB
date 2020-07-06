@@ -37,7 +37,7 @@ body {
 .bar_item{
     display: flex;
     justify-content: center;
-    width: 10vw;
+    width: 9vw;
     
     height: 6vh;
     padding-top: 5px;
@@ -99,7 +99,7 @@ body {
 }
 .header ul li ul{
     margin-left: 15px;
-    width: 10vw;
+    width: 9vw;
     padding-left: 0px;
 }
 
@@ -203,6 +203,8 @@ body {
     font-family: 'Courier New';
    
 }
+
+
 #cName{
     width: 25vw;
     height: 5vh;
@@ -247,19 +249,130 @@ body {
     display: inline;
     color: white;
 }
-#nextChapterButton{
-    width: 8vw;
+#clearButton{
+    width: 5vw;
     height: 5vh;
-    border-radius: 5px;
-    color: white;
-    background: rgb(241, 166, 4);
+    background: rgb(255, 153, 0);
     font-family: 'Courier New';
+    border-radius: 5px;
     display: inline;
+    color: white;
 }
+
 .buttons{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     margin-top: 3vh;
     margin-bottom: 2vh;
+}
+
+.editCourse form .editCForm{
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 12.5vw;
+}
+
+
+.editCourse form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    width: 50vw;
+    background: rgb(34, 33, 33); 
+}
+.editCourse form div label{
+    color: white;
+    font-family: 'Courier New';
+   
+}
+
+#editCName{
+    width: 25vw;
+    height: 5vh;
+    background: white;
+    
+}
+#editCHNumber{
+    width: 25vw;
+    height: 5vh;
+    background: white;
+}
+#editCHTitle{
+    width: 25vw;
+    height: 5vh;
+    background: white;
+}
+
+#editCHHeader{
+    width: 25vw;
+    height: 20vh;
+    
+    background: white;
+}
+
+#editCHBody{
+    width: 25vw;
+    height: 40vh;
+    background: white;
+    
+}
+#editCFile{
+    font-family: 'Courier New';
+    color: white;
+    
+}
+#editCClearButton{
+    width: 5vw;
+    height: 5vh;
+    background: rgb(255, 153, 0);
+    font-family: 'Courier New';
+    border-radius: 5px;
+    display: inline;
+    color: white;
+}
+#editCDeleteButton{
+    width: 5vw;
+    height: 5vh;
+    background: red;
+    font-family: 'Courier New';
+    border-radius: 5px;
+    display: inline;
+    color: white;
+}
+.editCButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+}
+#profile ul li {
+    list-style: none;
+    text-align: center;
+    height: 5vh;
+    font-family: 'Courier New';
+    color: white;
+   border-top:1px solid white;
+   padding-top: 2.5vh;
+}
+#profile ul{
+    
+    padding-left: 0;
+    margin-top: 0;
+}
+#profile{
+    width: 40vw;
+    height: auto;
+    margin-left: 17.5vw;
+    margin-top: 10vh;
+    background: rgb(34, 33, 33);
+    
+}
+#profile ul .data{
+    color:rgb(241, 166, 4) ;
+    font-weight: bold;
 }

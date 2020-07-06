@@ -34,4 +34,45 @@ class CourseRepository{
         $statement->bindParam(":photo",$photo);
         $statement->execute();
     }
+
+    public function getCourse($cName){
+        //  $conn=new dataBaseConnection();
+        //  $connection=$conn->startConnection();
+   
+         $sql="SELECT * FROM course ";
+         $stmt = $this->connection->query($sql);
+   
+        //  $stmt->execute(
+        //               array(
+        //                   'courseName' => $cName
+                        
+        //            )
+        //               );
+        
+         foreach($stmt as $row){
+             
+          $id= $row['id'];
+          $courseName=$row['courseName'];
+          $chapterNumber=$row['chapterNumber'];
+           $title=$row['title'];
+           $head=$row['head'];
+           $body=$row['body'];
+           $photo=$row['photo'];
+           $course= new Course($courseName,$chapterNumber,$title,$head,$body,$photo);
+           return $course;
+    }
+}
+
+public function deleteChapter($courseN,$chapterNum){
+   
+    
+    $sql="DELETE FROM course WHERE courseName='$courseN' and chapterNumber='$chapterNum'";
+
+ 
+    $statement = $this->connection->prepare($sql);
+  
+
+    
+    $statement->execute();
+}
 }

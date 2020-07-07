@@ -52,23 +52,25 @@
   <div class="courses-link">
 
     <ul>
-      <li> <a href="#html">HTML</a> </li>
-      <li><a href="#css">CSS</a></li>
-      <li><a href="#js">JAVASCRIPT</a></li>
-      <li><a href="#php">PHP</a></li>
-      <li><a href="#java">JAVA</a></li>
-      <li><a href="#sql">SQL</a></li>
+      <li> <a onclick="showHtmlVideo()">HTML</a> </li>
+      <li><a  onclick="showCssVideo()">CSS</a></li>
+      <li><a  onclick="showJsVideo()">JAVASCRIPT</a></li>
+      <li><a  onclick="showPhpVideo()">PHP</a></li>
+      <li><a  onclick="showJavaVideo()">JAVA</a></li>
+      <li><a  onclick="showSqlVideo()">SQL</a></li>
     </ul>
   </div>
 
 
 
   <div class="videos-part">
+<div class="helpText" id="helpText">
+  Click in the left buttons to show videos.
+</div>
+       
 
-        
-
-    <div class="courses-div">
-      <h2 id="html">HTML  Course</h2>
+    <div class="courses-div hide" id="htmlVideo">
+      
         <iframe  src="https://www.youtube.com/embed/pQN-pnXPaVg" frameborder="0" 
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -76,8 +78,8 @@
 
 
 
-     <div class="courses-div">
-      <h2 id="css">CSS Course</h2>
+     <div class="courses-div hide" id="cssVideo">
+      
       <iframe  src="https://www.youtube.com/embed/yfoY53QXEnI" frameborder="0"
        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -86,8 +88,8 @@
 
 
 
-    <div class="courses-div">
-      <h2 id="js">JAVASCRIPT Course</h2>
+    <div class="courses-div hide" id="jsVideo">
+     
       <iframe  src="https://www.youtube.com/embed/hdI2bqOjy3c" frameborder="0" 
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -96,22 +98,22 @@
 
 
 
-    <div class="courses-div">
-      <h2 id="php">PHP Course</h2>
+    <div class="courses-div hide" id="phpVideo">
+     
       <iframe  src="https://www.youtube.com/embed/NihZYkNpslE" frameborder="0" 
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     </div>
 
-    <div class="courses-div">
-      <h2 id="java">JAVA Course</h2>
+    <div class="courses-div hide" id="javaVideo">
+      
       <iframe src="https://www.youtube.com/embed/eIrMbAQSU34" frameborder="0"
        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     </div>
 
-    <div class="courses-div">
-      <h2 id="sql">SQL Course</h2>
+    <div class="courses-div hide" id="sqlVideo">
+      
       <iframe src="https://www.youtube.com/embed/XqIk2PwP0To" frameborder="0" 
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -149,7 +151,7 @@
           </ul>
       </div>
     <div class="footer-section contact" style="width: 40vw;">
-        <form>
+        <form >
           <h3>Feedback</h3>
             <textarea name = "feedback" cols = "50" rows = "4" placeholder = "Sugjeroni..."></textarea>
             <br>
@@ -164,3 +166,6 @@
     </div>
   </div>
 </div>
+<script src="../js/tutorialsJS.js"></script>
+</body>
+</html>

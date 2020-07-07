@@ -5,9 +5,14 @@
 
 
 .main-part{
-    margin-top: 20vh;
+    margin-top: 10vh;
     display: flex;
     flex-direction: row;
+    
+    
+}
+.courses-link{
+    
 }
 .courses-link ul{
     
@@ -23,19 +28,28 @@
     
 }
    .courses-link li a{
-       padding-top: 4vh;
+    padding-top: 4vh;
     display: flex;
     justify-content: center;
-       text-decoration: none;
+    text-decoration: none;
     margin-top: 2vh;
-    border-radius: 3px;
+    border-radius: 5px;
     width: 15vw;
-    height: 10vh;
-    color: white;
+    height: 6vh;
+    
+    color:rgb(34, 33, 33);
     background: rgb(241, 166, 4);
     font-family: 'Courier New';
     text-align: center;
+    font-size: 1.4vw;
    
+   }
+   .courses-link li a:hover{
+       background: rgb(201, 132, 5);
+       color:rgb(34, 33, 33);
+       /* font-size: 1.5vw; */
+       transition: 0.5s;
+       color: white;
    }
 
 .videos-part h2{
@@ -44,21 +58,40 @@
     border-radius: 3px;
     width: 100%;
     height: 10%;
-    color: white;
-    background: rgb(241, 166, 4);
+    color: black;
+    /* background: rgb(241, 166, 4); */
+    background: white;
     margin: 0;
+    padding-top:2%;
+}
+.videos-part{
+    border: 2px outset rgb(126, 125, 125); 
+    width: 60vw;
+    margin-left: 15vw;
+    padding-left: 0;
+    
 }
 
 .courses-div{
    
-    
-    margin-top: 10vh;
-    margin-left: 25vw;
-    width: 50vw;
-    height: 60vh;
+
+    width: 100%;
+    height: 100%;
 }
 .courses-div iframe{
-    margin-top: 2%;
+    /* margin-top: 2%; */
   width: 100%;
-  height: 88%;
+  height: 100%;
+} 
+.helpText{
+    font-family: 'Segoe Print';
+    color: white;
+    text-align: center;
+    width: 15vw;
+    height: 6vh;
+    margin-left: 22.5vw;
+    margin-top: 5vh;
+}
+.hide{
+    display: none;
 }

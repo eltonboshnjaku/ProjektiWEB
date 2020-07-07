@@ -1,3 +1,15 @@
+<?php
+//session_start();
+include_once 'createCourses.php';
+include_once 'registerUsers.php';
+
+
+$roli=$_SESSION['role'];
+if($roli=='user'){
+  $hide='hide';
+}else{
+  $hide="";
+}
 <!DOCTYPE html>
 
 <html>
@@ -165,7 +177,7 @@ include_once '../models/DBConnection.php';
             </ul>
         </div>
         <div class="footer-section contact" style = "width: 40vw;">
-            <form>
+            <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
             <h3>Feedback</h3>
                 <textarea name = "feedback" cols = "50" rows = "4" placeholder = "Sugjeroni..."></textarea>
                 <br>

@@ -38,7 +38,7 @@ public function create(Useri $user){
     $stmt = $this->connection->query($sql);
 
      echo 
-     '<table width="87%" border="1" style="color:rgb(241, 166, 4); " >
+     '<table width="100%" border="1" style="color:rgb(241, 166, 4); " >
      <tr>
      <th style="background:rgb(34, 33, 33);">ID:</th>
      <th style="background:rgb(34, 33, 33);">USERNAME:</th>

@@ -2,7 +2,7 @@
 //session_start();
 include_once 'createCourses.php';
 include_once 'registerUsers.php';
-
+include_once 'insertMessage.php';
 
 $roli=$_SESSION['role'];
 if($roli=='user'){
@@ -10,6 +10,7 @@ if($roli=='user'){
 }else{
   $hide="";
 }
+?>
 <!DOCTYPE html>
 
 <html>
@@ -22,41 +23,39 @@ if($roli=='user'){
 
 
     <body>
-        <div class="header" id="header"> 
+    <div class="header" id="header"> 
            
-            <div class="title">
-                <a class="maintitle" href="home.html">Progtut<span class="com">.com</span> </a>
-            </div>
-              
-            <ul class="bar">
-                 
-                 <li ><a class="bar_item" href="home.html">Home</a> </li>
-                 <li ><a class="bar_item"  href="home.html">Courses</a>
+           <div class="title">                         
+             <a class="maintitle" href="home.php">Progtut<span class="com">.com</span> </a>             
+           </div>
+             
+             <ul class="bar">
                 
-                
-                  <ul>
-                    <li><a class="courseSubMenu" href="htmlCourse.html">HTML</a></li>
-                    <li><a class="courseSubMenu"  href="cssCourse.html">CSS</a></li>
-                    <li><a class="courseSubMenu" href="">JAVASCRIPT</a></li>
-                    <li><a class="courseSubMenu" href="">JAVA</a></li>
-                    <li><a class="courseSubMenu" href="phpCourse.html">PHP</a></li>
-                    <li><a class="courseSubMenu" href="">SQL</a></li>
-                    
-                  </ul>
-                
-                
-                
-                
+                <li ><a class="bar_item" href="home.php">Home</a> </li>
+                <li ><a class="bar_item"  href="home.php">Courses</a>
+               
+               
+                 <ul>
+                   <li><a class="courseSubMenu" href="htmlCourse.php">HTML</a></li>
+                   <li><a class="courseSubMenu"  href="cssCourse.php">CSS</a></li>
+                   <li><a class="courseSubMenu" href="">JAVASCRIPT</a></li>
+                   <li><a class="courseSubMenu" href="phpCourse.php">PHP</a></li>
+                   <li><a class="courseSubMenu" href="javaCourse.php">JAVA</a></li>
+                   <li><a class="courseSubMenu" href="">SQL</a></li>
+                   
+                 </ul>
+               
                 </li>
-                <li ><a class="bar_item" href="tutorials.html">Tutorials</a> </li>
-                 <li ><a class="bar_item" href="techVocabulary.html">Tech Vocabulary</a> </li>
-                 <li ><a class="bar_item" href="aboutUs.html">About Us</a> </li>
-                 <li ><a class="bar_item" href="login.php">Login</a> </li>
-                 
-                 
-  
-             </ul>
-          </div>
+              
+                <li ><a class="bar_item" href="tutorials.php">Tutorials</a> </li>
+                <li ><a class="bar_item" href="techVocabulary.php">Tech Vocabulary</a> </li>
+                <li ><a class="bar_item" href="aboutUs.php">About Us</a> </li>
+                <li ><a id="admDashboard" class="bar_item <?=$hide?>  " href="adminDashboard.php">Dashboard</a> </li> 
+                <li><a class="bar_item" href="login.php">Log Out</a>
+                
+ 
+            </ul>
+             </div>
 
 
 <div class="main">
@@ -168,13 +167,13 @@ include_once '../models/DBConnection.php';
         <div class="footer-section links">
             <h3>Links</h3>
             <ul>
-                <li class="footerLink"><a href = "home.html">Home</a></li>
-                <li class="footerLink"><a href = "kurset.html">Courses</a></li>
-                <li class="footerLink"><a href = "techVoc.html">Tech Vocabulary</a></li>
-                <li class="footerLink"><a href = "aboutUs.html">About Us</a></li>
-                <li class="footerLink"><a href = "privacyPolicy.html">Privacy Policy</a></li>
-                <li class="footerLink"><a href = "https://github.com/eltonboshnjaku/WEB-PROGRAMIM">Repository</a></li>
-            </ul>
+                      <li class="footerLink"><a href = "home.php">Home</a></li>
+                      <li class="footerLink"><a href = "tutorials.php">Tutorials</a></li>
+                      <li class="footerLink"><a href = "techVocabulary.php">Tech Vocabulary</a></li>
+                      <li class="footerLink"><a href = "aboutUs.php">About Us</a></li>
+                      <li class="footerLink"><a href = "privacyPolicy.html">Privacy Policy</a></li>
+                      <li class="footerLink"><a href = "https://github.com/eltonboshnjaku/WEB-PROGRAMIM">Repository</a></li>
+                  </ul>
         </div>
         <div class="footer-section contact" style = "width: 40vw;">
             <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">

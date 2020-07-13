@@ -39,7 +39,7 @@ class MessageRepository{
         echo 
         '<table width="87%" border="1" style="color:rgb(241, 166, 4); margin-top:10vh; margin-left:5vw;" >
         <tr>
-        <th style="background:rgb(34, 33, 33);">ID:</th>
+      
         <th style="background:rgb(34, 33, 33);">Name:</th>
         <th style="background:rgb(34, 33, 33);">Email:</th>
         <th style="background:rgb(34, 33, 33);">Message:</th>
@@ -49,7 +49,7 @@ class MessageRepository{
         foreach($stmt as $row){
             echo '
             <tr>
-            <td style="background:white; color:black;">'.$row['id'].'</td>
+           
             <td style="background:white; color:black;">'.$row['name'].'</td>
             <td style="background:white; color:black;">'.$row['email'].'</td>
             <td style="background:white; color:black;">'.$row['message'].'</td>

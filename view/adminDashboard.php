@@ -3,7 +3,7 @@
 //session_start();
 include_once 'createCourses.php';
 include_once 'registerUsers.php';
-
+include_once 'insertWord.php';
 
 $username= $_SESSION['username'];
 $password=$_SESSION['password'];
@@ -26,51 +26,71 @@ if($roli=='user'){
     <title>Dashboard</title>
 </head>
 <body>
+
 <div class="header" id="header"> 
            
            <div class="title">                         
-             <a class="maintitle" href="home.html">Progtut<span class="com">.com</span> </a>             
+             <a class="maintitle" href="home.php">Progtut<span class="com">.com</span> </a>             
            </div>
              
-            <ul class="bar">
+             <ul class="bar">
                 
-                <li ><a class="bar_item" href="home.html">Home</a> </li>
-                <li ><a class="bar_item"  href="home.html">Courses</a>
+                <li ><a class="bar_item" href="home.php">Home</a> </li>
+                <li ><a class="bar_item"  href="home.php">Courses</a>
                
                
                  <ul>
-                   <li><a class="courseSubMenu" href="htmlCourse.html">HTML</a></li>
-                   <li><a class="courseSubMenu"  href="cssCourse.html">CSS</a></li>
+                   <li><a class="courseSubMenu" href="htmlCourse.php">HTML</a></li>
+                   <li><a class="courseSubMenu"  href="cssCourse.php">CSS</a></li>
                    <li><a class="courseSubMenu" href="">JAVASCRIPT</a></li>
-                   <li><a class="courseSubMenu" href="phpCourse.html">PHP</a></li>
-                   <li><a class="courseSubMenu" href="">JAVA</a></li>
+                   <li><a class="courseSubMenu" href="phpCourse.php">PHP</a></li>
+                   <li><a class="courseSubMenu" href="javaCourse.php">JAVA</a></li>
                    <li><a class="courseSubMenu" href="">SQL</a></li>
                    
                  </ul>
                
                 </li>
               
-                <li ><a class="bar_item" href="tutorials.html">Tutorials</a> </li>
-                <li ><a class="bar_item" href="techVocabulary.html">Tech Vocabulary</a> </li>
-                <li ><a class="bar_item" href="aboutUs.html">About Us</a> </li>
+                <li ><a class="bar_item" href="tutorials.php">Tutorials</a> </li>
+                <li ><a class="bar_item" href="techVocabulary.php">Tech Vocabulary</a> </li>
+                <li ><a class="bar_item" href="aboutUs.php">About Us</a> </li>
                 <li ><a id="admDashboard" class="bar_item <?=$hide?>  " href="adminDashboard.php">Dashboard</a> </li> 
                 <li><a class="bar_item" href="login.php">Log Out</a>
                 
  
             </ul>
-         </div>
+             </div>
+          
+         
 
 <div class="adminPanel">
 
 
          <div class="menu">
          
-          <ul>
+          <ul >
               <li id="prf" onclick="showProfile()">Profile</li>
               <li onclick="showUsers()" id="users">Users</li>
+              <li id="courses">Courses
+            
+               <ul id="cList" > 
               <li onclick=" newCourse()" id="newC" >New Course</li>
               <li onclick="editCourse() "id="editC">Edit Courses</li>
-              <li id="messag" onclick="showMessages() ">Messages</li>
+
+               </ul> 
+            
+            </li>
+              
+              <li id="tutorials">Tutorials
+
+
+             <ul id="tList">
+                 <li>New Tutorial</li>
+                 <li>Edit Tutorial</li>
+             </ul>
+             </li>
+             <li id="messag" onclick="showVocabulary() ">Vocabulary</li> 
+              <li id="messag" onclick="showMessages() ">Messages</li> 
 
               
              
@@ -104,6 +124,10 @@ $userRepo= new UserRepository();
 
 
 <div id="newCourse" class="newCourse  hide">
+
+<?php
+
+?>
 <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
 
     <div class="formDiv">
@@ -174,8 +198,38 @@ $userRepo= new UserRepository();
 
 </div>
 
+<!--new tutorials -->
+<div>
+
+</div>
+<!--edit tutorials -->
+<div>
+
+</div>
+
+<!--vocabulary -->
+<div class="vocabulary hide" id="vocabulary">
+<form action="" method="post">
+
+<div class="formContent">
 
 
+    <label for="keyword">Keyword</label>
+    <input type="text" name="keyword" id="keyword"> 
+
+    <label for="description">Description</label>
+    
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+
+    <input type="submit" name="sbmButton" id="sbmButton" value="save">
+    
+    <span style="color:red; font-family: 'Courier New'"><?=$vocabularyError?></span>
+</div>
+   
+    
+</form>
+</div>
+<!-- messages -->
 <div class="messages hide" id="messages">
     <div>
 
@@ -215,7 +269,8 @@ $mRepos->getMessages();
 
 
 
-         </div>         
+         </div>      
+        
 <script src="../js/adminDashboard.js"></script>
 </body>
 </html>

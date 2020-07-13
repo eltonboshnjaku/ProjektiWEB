@@ -2,7 +2,7 @@
 //session_start();
 include_once 'createCourses.php';
 include_once 'registerUsers.php';
-
+include_once 'insertMessage.php';
 
 $roli=$_SESSION['role'];
 if($roli=='user'){
@@ -31,47 +31,39 @@ if($roli=='user'){
 
     <body style="background: rgb(34, 33, 33);">
         
-        <div class="header" id="header"> 
+    <div class="header" id="header"> 
            
-          <div class="title">
-           
-            
-            <a class="maintitle" href="home.html">Progtut<span class="com">.com</span> </a>
-              
-              
-           
-           
-          </div>
-            
-           <ul class="bar">
+           <div class="title">                         
+             <a class="maintitle" href="home.php">Progtut<span class="com">.com</span> </a>             
+           </div>
+             
+             <ul class="bar">
+                
+                <li ><a class="bar_item" href="home.php">Home</a> </li>
+                <li ><a class="bar_item"  href="home.php">Courses</a>
                
-               <li ><a class="bar_item" href="home.html">Home</a> </li>
-               <li ><a class="bar_item"  href="home.html">Courses</a>
+               
+                 <ul>
+                   <li><a class="courseSubMenu" href="htmlCourse.php">HTML</a></li>
+                   <li><a class="courseSubMenu"  href="cssCourse.php">CSS</a></li>
+                   <li><a class="courseSubMenu" href="">JAVASCRIPT</a></li>
+                   <li><a class="courseSubMenu" href="phpCourse.php">PHP</a></li>
+                   <li><a class="courseSubMenu" href="javaCourse.php">JAVA</a></li>
+                   <li><a class="courseSubMenu" href="">SQL</a></li>
+                   
+                 </ul>
+               
+                </li>
               
-              
-                <ul>
-                  <li><a class="courseSubMenu" href="htmlCourse.html">HTML</a></li>
-                  <li><a class="courseSubMenu"  href="cssCourse.html">CSS</a></li>
-                  <li><a class="courseSubMenu" href="">JAVASCRIPT</a></li>
-                  <li><a class="courseSubMenu" href="phpCourse.html">PHP</a></li>
-                  <li><a class="courseSubMenu" href="">JAVA</a></li>
-                  <li><a class="courseSubMenu" href="">SQL</a></li>
-                  
-                </ul>
-              
-               </li>
-              
-              
-                <li ><a class="bar_item" href="tutorials.html">Tutorials</a> </li>
-               <li ><a class="bar_item" href="techVocabulary.html">Tech Vocabulary</a> </li>
-               <li ><a class="bar_item" href="aboutUs.html">About Us</a> </li>
+                <li ><a class="bar_item" href="tutorials.php">Tutorials</a> </li>
+                <li ><a class="bar_item" href="techVocabulary.php">Tech Vocabulary</a> </li>
+                <li ><a class="bar_item" href="aboutUs.php">About Us</a> </li>
                 <li ><a id="admDashboard" class="bar_item <?=$hide?>  " href="adminDashboard.php">Dashboard</a> </li> 
-               
-               <li><a class="bar_item " href="login.php">Log Out</a>
-               
-
-           </ul>
-        </div>
+                <li><a class="bar_item" href="login.php">Log Out</a>
+                
+ 
+            </ul>
+             </div>
       
       
         
@@ -188,7 +180,7 @@ if($roli=='user'){
 
         <div class="gjuhet">
           <div class="gjuhet_titulli">
-          <a href="htmlCourse.html"> <h2>HTML</h2> </a> 
+          <a href="htmlCourse.php"> <h2>HTML</h2> </a> 
           </div>
           <div class="gjuhet_body">
             <ul class="gjuhet_lista">
@@ -226,7 +218,7 @@ if($roli=='user'){
   
         <div class="gjuhet">
             <div class="gjuhet_titulli">
-             <a  href="../cssCourse.html"> <h2>CSS</h2></a>
+             <a  href="cssCourse.php"> <h2>CSS</h2></a>
             </div>
             <div class="gjuhet_body">
               <ul class="gjuhet_lista">
@@ -324,7 +316,7 @@ if($roli=='user'){
 
           <div class="gjuhet">
             <div class="gjuhet_titulli">
-              <a href=""><h2>JAVA</h2></a>
+              <a href="javaCourse.php"><h2>JAVA</h2></a>
             </div>
             <div class="gjuhet_body">
               <ul class="gjuhet_lista">
@@ -411,7 +403,7 @@ if($roli=='user'){
             <div class="gjuhet_body">
                 <ul class="gjuhet_lista">
                   
-                    <li style="list-style-type: none; margin: 100px;">Clikc Here To Search.</li>
+                    <li style="list-style-type: none; margin: 100px;"><a style="text-decoration:none;" href="techVocabulary.php">Clikc Here To Search.</a></li>
                 </ul>
               
               
@@ -430,10 +422,10 @@ if($roli=='user'){
               <div class="footer-section links">
                   <h3>Links</h3>
                   <ul>
-                      <li class="footerLink"><a href = "home.html">Home</a></li>
-                      <li class="footerLink"><a href = "home.html">Courses</a></li>
-                      <li class="footerLink"><a href = "techVoc.html">Tech Vocabulary</a></li>
-                      <li class="footerLink"><a href = "aboutUs.html">About Us</a></li>
+                      <li class="footerLink"><a href = "home.php">Home</a></li>
+                      <li class="footerLink"><a href = "tutorials.php">Tutorials</a></li>
+                      <li class="footerLink"><a href = "techVocabulary.php">Tech Vocabulary</a></li>
+                      <li class="footerLink"><a href = "aboutUs.php">About Us</a></li>
                       <li class="footerLink"><a href = "privacyPolicy.html">Privacy Policy</a></li>
                       <li class="footerLink"><a href = "https://github.com/eltonboshnjaku/WEB-PROGRAMIM">Repository</a></li>
                   </ul>

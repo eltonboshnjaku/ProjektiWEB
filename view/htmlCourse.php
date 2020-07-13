@@ -2,7 +2,7 @@
 //session_start();
 include_once 'createCourses.php';
 include_once 'registerUsers.php';
-
+include_once 'insertMessage.php';
 
 $roli=$_SESSION['role'];
 if($roli=='user'){
@@ -10,6 +10,7 @@ if($roli=='user'){
 }else{
   $hide="";
 }
+?>
 <!DOCTYPE html>
 
 <html>
@@ -22,41 +23,39 @@ if($roli=='user'){
 
 
     <body>
-        <div class="header" id="header"> 
+    <div class="header" id="header"> 
            
-            <div class="title">
-                <a class="maintitle" href="home.html">Progtut<span class="com">.com</span> </a>
-            </div>
-              
-            <ul class="bar">
-                 
-                 <li ><a class="bar_item" href="home.html">Home</a> </li>
-                 <li ><a class="bar_item"  href="home.html">Courses</a>
+           <div class="title">                         
+             <a class="maintitle" href="home.php">Progtut<span class="com">.com</span> </a>             
+           </div>
+             
+             <ul class="bar">
                 
-                
-                  <ul>
-                    <li><a class="courseSubMenu" href="htmlCourse.html">HTML</a></li>
-                    <li><a class="courseSubMenu"  href="cssCourse.html">CSS</a></li>
-                    <li><a class="courseSubMenu" href="">JAVASCRIPT</a></li>
-                    <li><a class="courseSubMenu" href="">JAVA</a></li>
-                    <li><a class="courseSubMenu" href="phpCourse.html">PHP</a></li>
-                    <li><a class="courseSubMenu" href="">SQL</a></li>
-                    
-                  </ul>
-                
-                
-                
-                
+                <li ><a class="bar_item" href="home.php">Home</a> </li>
+                <li ><a class="bar_item"  href="home.php">Courses</a>
+               
+               
+                 <ul>
+                   <li><a class="courseSubMenu" href="htmlCourse.php">HTML</a></li>
+                   <li><a class="courseSubMenu"  href="cssCourse.php">CSS</a></li>
+                   <li><a class="courseSubMenu" href="">JAVASCRIPT</a></li>
+                   <li><a class="courseSubMenu" href="phpCourse.php">PHP</a></li>
+                   <li><a class="courseSubMenu" href="javaCourse.php">JAVA</a></li>
+                   <li><a class="courseSubMenu" href="">SQL</a></li>
+                   
+                 </ul>
+               
                 </li>
-                <li ><a class="bar_item" href="tutorials.html">Tutorials</a> </li>
-                 <li ><a class="bar_item" href="techVocabulary.html">Tech Vocabulary</a> </li>
-                 <li ><a class="bar_item" href="aboutUs.html">About Us</a> </li>
-                 <li ><a class="bar_item" href="login.php">Login</a> </li>
-                 
-                 
-  
-             </ul>
-          </div>
+              
+                <li ><a class="bar_item" href="tutorials.php">Tutorials</a> </li>
+                <li ><a class="bar_item" href="techVocabulary.php">Tech Vocabulary</a> </li>
+                <li ><a class="bar_item" href="aboutUs.php">About Us</a> </li>
+                <li ><a id="admDashboard" class="bar_item <?=$hide?>  " href="adminDashboard.php">Dashboard</a> </li> 
+                <li><a class="bar_item" href="login.php">Log Out</a>
+                
+ 
+            </ul>
+             </div>
 
 
 <div class="main">
@@ -87,26 +86,7 @@ include_once '../models/DBConnection.php';
           ";
          }
            ?>
-        <!-- <ul>
-            <li><a href="#intro"> Introduction</a></li>
-            <li><a href="#editors">Editors</a> </li>
-            <li><a href="">Basic</a> </li>
-            <li><a href="#htmlElements">Elements</a> </li>
-            <li><a href="">Attributes</a> </li>
-            <li><a href="">Headings</a> </li>
-            <li><a href="">Paragraphs</a> </li>
-            <li><a href="">Styles</a> </li>
-            <li><a href=""> Colors</a></li>
-            <li><a href="">CSS</a> </li>
-            <li><a href="">Links</a> </li>
-            <li><a href="">Elements</a> </li>
-            <li><a href="">Tables</a> </li>
-            <li><a href="">Lists</a> </li>
-            <li><a href="">Blocs</a> </li>
-            <li><a href="">Classes</a> </li>
-            <li><a href="">Id</a> </li>
-
-        </ul> -->
+       
 
 
     </div>
@@ -116,98 +96,7 @@ include_once '../models/DBConnection.php';
 
     <div class="allCourses">
         <div class = "content">
-                <!-- <h1 id="intro">HTML Introduction</h1>
-
-                <h3>What is HTML?</h3>
-                <ul>
-                <li>HTML stands for Hyper Text Markup Language</li> 
-                <li>HTML describes the structure of a Web page</li>
-                <li>HTML consists of a series of elements</li>
-                <li>HTML elements tell the browser how to display the content</li>
-                <li>HTML elements are represented by tags</li>
-                <li>HTML tags label pieces of content such as "heading", "paragraph", "table", and so on</li>
-                <li>Browsers do not display the HTML tags, but use them to render the content of the page</li>
-                </ul>
-
-                        <br> <br>
-                <h3>Web Browsers</h3>
-                <p>The purpose of a web browser (Chrome, Edge, Firefox, Safari) is to read HTML documents and display them.</p>
-                <p> The browser does not display the HTML tags, but uses them to determine how to display the document:</p>
-                <img src="../photos/chrome.png" alt="Browser Photo">
-                
-                    <br><br>
-                    <h3>HTML Page Structure</h3>
-                    <p>Below is a visualization of an HTML page structure:</p>
-                    <img src="../photos/pageStructure.PNG" alt="">
-                    
-
-                    <br> <br>
-                    <h3>The <!DOCTYPE> Declaration</h3>
-                    
-                <p>The < ! DOCTYPE >  declaration represents the document type, and helps browsers to display web pages correctly.</p> 
-                <p>It must only appear once, at the top of the page (before any HTML tags).</p>
-                <p>The < ! DOCTYPE > declaration is not case sensitive.</p>
-                <br>
-                <br>
-                
-
-
-
-
-            <h1 id="editors">HTML Editors</h1>
-
-            <h3>Learn HTML Using Notepad or TextEdit</h3>
-            <p>Web pages can be created and modified by using professional HTML editors.</p>
-            <p>However, for learning HTML we recommend a simple text editor like Notepad (PC) or TextEdit (Mac).</p>
-            <p>We believe using a simple text editor is a good way to learn HTML.</p>
-            <p>Follow the steps below to create your first web page with Notepad or TextEdit.</p>
-            
-
-                <h3>Step 1: Open Notepad (PC)</h3>
-                <p> <b>Windows 8 or later:</b> </p>
-            <p>Open the Start Screen (the window symbol at the bottom left on your screen). Type Notepad.</p>
-
-            <p><b>Windows 7 or earlier:</b></p>
-            <p>Open Start > Programs > Accessories > Notepad</p>
-            
-            <h3> Step 1: Open TextEdit (Mac)</h3>
-            <p>Open Finder > Applications > TextEdit</p>
-            <p>Also change some preferences to get the application to save files correctly. In Preferences > Format > choose "Plain Text"</p>
-            <p>Then under "Open and Save", check the box that says "Display HTML files as HTML code instead of formatted text".</p>
-            <p>Then open a new document to place the code.</p>
-            <h3> Step 2: Write Some HTML</h3>
-            <p> Write or copy some HTML into Notepad.</p>
-
-            <button><a href="#intro">Go to previous chapter</a></button>
-            <br><br>
-            
-            
-            <h1 id="htmlElements">HTML Elements</h1>
-
-            <p>An HTML element is defined by a start tag, some content, and an end tag.</p>
-
-            <h3>HTML Elements</h3>
-            <p>An HTML element usually consists of a start tag and an end tag, with the content inserted in between:</p>
-            <p>< tagname >Content goes here...</ tagname ></p>
-            <p>The HTML element is everything from the start tag to the end tag:</p>
-            <p> < p >My first paragraph. < / p > </p>
-
-            <img src="../photos/htmlElements.PNG" alt="">
-
-            <br>
-
-            <h2>Nested HTML Elements</h2>
-            <p>HTML elements can be nested (elements can contain elements).</p>
-            <p>All HTML documents consist of nested HTML elements.</p>
-            <p>This example contains four HTML elements:</p>
-
-            <h3>Example</h3>
-            <img src="../photos/htmlElementsEX.PNG" alt="">
-
-            <br>
-            <button><a href="#editors">Go to previous chapter</a></button>
-            <br><br> -->
-
+               
 
 
             <?php
@@ -277,13 +166,13 @@ include_once '../models/DBConnection.php';
         <div class="footer-section links">
             <h3>Links</h3>
             <ul>
-                <li class="footerLink"><a href = "home.html">Home</a></li>
-                <li class="footerLink"><a href = "kurset.html">Courses</a></li>
-                <li class="footerLink"><a href = "techVoc.html">Tech Vocabulary</a></li>
-                <li class="footerLink"><a href = "aboutUs.html">About Us</a></li>
-                <li class="footerLink"><a href = "privacyPolicy.html">Privacy Policy</a></li>
-                <li class="footerLink"><a href = "https://github.com/eltonboshnjaku/WEB-PROGRAMIM">Repository</a></li>
-            </ul>
+                      <li class="footerLink"><a href = "home.php">Home</a></li>
+                      <li class="footerLink"><a href = "tutorials.php">Tutorials</a></li>
+                      <li class="footerLink"><a href = "techVocabulary.php">Tech Vocabulary</a></li>
+                      <li class="footerLink"><a href = "aboutUs.php">About Us</a></li>
+                      <li class="footerLink"><a href = "privacyPolicy.html">Privacy Policy</a></li>
+                      <li class="footerLink"><a href = "https://github.com/eltonboshnjaku/WEB-PROGRAMIM">Repository</a></li>
+                  </ul>
         </div>
         <div class="footer-section contact" style = "width: 40vw;">
             <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">

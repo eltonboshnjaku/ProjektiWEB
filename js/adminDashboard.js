@@ -5,6 +5,7 @@ var newCoursePanel= document.getElementById("newCourse");
 var editCoursePanel=document.getElementById("editCourse");
 var messagesPanel=document.getElementById("messages");
 var profilePanel=document.getElementById("profile");
+var vocabularyPanel = document.getElementById("vocabulary");
 
 function showUsers(){
     usersPanel.classList.remove("hide");
@@ -12,6 +13,7 @@ function showUsers(){
     hideEditCourse();
     hideMessages();
     hideProfile();
+    hideVocabulary();
 }
 
 function newCourse(){
@@ -20,6 +22,7 @@ function newCourse(){
     hideEditCourse();
     hideMessages();
     hideProfile();
+    hideVocabulary();
 }
 
 function editCourse(){
@@ -28,6 +31,7 @@ function editCourse(){
     hideUsers();
     hideMessages();
     hideProfile();
+    hideVocabulary();
 }
 function showMessages(){
     messagesPanel.classList.remove("hide");
@@ -35,6 +39,7 @@ function showMessages(){
     hideEditCourse();
     hideUsers();
     hideProfile();
+    hideVocabulary();
 }
 
 function showProfile(){
@@ -43,6 +48,15 @@ function showProfile(){
     hideEditCourse();
     hideMessages();
     hideUsers();
+    hideVocabulary();
+}
+function showVocabulary(){
+    vocabularyPanel.classList.remove("hide");
+    hideNewCourse();
+    hideEditCourse();
+    hideMessages();
+    hideUsers();
+    hideProfile();
 }
 
 function hideMessages(){
@@ -61,9 +75,8 @@ function hideUsers(){
 function hideProfile(){
     profilePanel.classList.add("hide");
 }
+function hideVocabulary(){
+    vocabularyPanel.classList.add("hide");
+}
 
 
-
-<?php 
-include '';
-?>

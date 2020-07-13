@@ -1,32 +1,36 @@
+*{margin:0; padding:0;}
 body {
     background: white;
 }
 .header{
     list-style-type: none;
     display: flex;
-    width: 98vw;
+    width: 100vw;
     /* background-color:rgb(34, 33, 33) ; */
-    position: sticky;
+     /* position: sticky; */
     top: 0px;
     margin: 0;
-    height:120px;
-    z-index: 2;
+    height:20vh;    
+     z-index: 2; 
     
     
 }
 
 .bar{
 
-    
+
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     background: rgb(43, 40, 40);
    width: 75vw;
-  
+margin-left: 25vw;
     height: 15vh;
     margin-top: 2.5vh;
+    position: fixed;
     
-    
+}
+.bar{
+
 }
 .bar > li{
     list-style: none;
@@ -43,8 +47,8 @@ body {
     border-radius: 5px;
     text-align: center;
     margin-top: 15px;
-    margin-left: 15px;
- 
+
+    margin-left: 1.3vw;
     background: rgb(241, 166, 4);
     color: white;
     text-decoration: none;
@@ -55,14 +59,14 @@ body {
  .bar_item:hover{background: rgb(201, 132, 5)}
 .title
 {
-
-    width: 24vw;
-    height: 20vh;
-     background: rgb(241, 166, 4); 
-    
+  
+    width: 25vw;
+    height: 17vh;
+    background: rgb(241, 166, 4); 
+    padding-top: 3vh; 
     margin-top: 0px;
-     text-align: center; 
-   
+    text-align: center; 
+  position: fixed;
     
    
   
@@ -71,7 +75,7 @@ body {
    
     text-decoration: none;
     color: white;
-     font-family: 'Segoe Print';
+    font-family: 'Segoe Print';
     text-shadow: 2px 2px 4px #636463, 0 0 5px #0000FF;  
     font-size: 3vw;
    
@@ -80,7 +84,7 @@ body {
   display: inline;
   margin-left: 0;
   padding-left: 0;
-    color: rgb(43, 40, 40); 
+  color: rgb(43, 40, 40); 
    
     
 }
@@ -97,9 +101,10 @@ body {
     font-size: 1.4vw;
 }
 .header ul li ul{
-    margin-left: 15px;
+    margin-left:1.3vw ;
     width: 9vw;
     padding-left: 0px;
+    
 }
 
 .header ul li ul li:hover{
@@ -128,22 +133,42 @@ body {
 
 
 .searchPart{
-
+    margin-left: 5vw;
     margin-top: 10vh;
     background: white;
+    width: 90vw;
+    height:5vh;
+   display: flex;
+   justify-content: space-between;
 }
-
+.searchTitle{
+    text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 2px #c59510;
+    text-decoration: rgb(241, 166, 4);
+    text-decoration: underline;
+    color: black;
+    font-family: 'Segoe Print';
+}
 .resultPart{
+    border: 1px solid green;
+    margin-left: 5vw;
     margin-top: 5vh;
-    height: 40vh;
+    height: 70vh;
+    width: 90vw;
     border: 2px outset;
     overflow: auto;
 }
-
+.alertPart{
+    width: 40vw;
+    height: 5vh;
+    margin-left: 5vw;
+    margin-top: 2vh;
+    margin-top: 5vh;
+}
 
 #search{
     width: 25vw;
     height: 5vh;
+    
     border: 1.5px solid rgb(241, 166, 4);
     border-radius: 3px;
 }

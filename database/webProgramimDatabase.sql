@@ -18,9 +18,30 @@ id int identity(1,1) primary key,
 courseName varchar(50) not null,
 chapterNumber int not null,
 title varchar(100) not null,
-head varchar(300) not null,
+head varchar(1000) not null,
 body varchar(1000) not null,
 photo varchar(150) not null,
 )
 
 select * from course
+
+create table message
+(
+id int identity(1,1) primary key,
+name varchar(150) not null,
+email varchar(100) not null,
+message varchar(1000) not null,
+
+)
+
+
+select * from message
+
+create table vocabulary
+(
+id int identity(1,1) primary key,
+keyword varchar(150) not null,
+description varchar(1000) not null,
+)
+
+select * from vocabulary

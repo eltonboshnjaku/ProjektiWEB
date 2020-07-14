@@ -71,7 +71,7 @@ if($roli=='user'){
           <ul >
               <li id="prf" onclick="showProfile()">Profile</li>
               <li onclick="showUsers()" id="users">Users</li>
-              <li id="courses">Courses
+              <li id="courses" onclick="">Courses
             
                   <ul id="cList" > 
                     <li onclick=" newCourse()" id="newC" >New Course</li>
@@ -80,11 +80,11 @@ if($roli=='user'){
                </li>
               
           
-             <li id="vocab" >Vocabulary
+             <li id="vocab" onclick="">Vocabulary
              
                   <ul id="vList">
                       <li onclick="showVocabulary() ">New Word</li>
-                      <li onclick="showEditWord() ">Edit Word</li>
+                      <li onclick="showEditWord()">Edit Word</li>
                   </ul>
              </li> 
               <li id="messag" onclick="showMessages() ">Messages</li> 
@@ -100,7 +100,7 @@ if($roli=='user'){
 <div class="outputPanel" id="outputPanel">
 
 
-
+<!-- users -->
 
     <div id="usersPanel" class="hide">
     <?php
@@ -114,9 +114,18 @@ $userRepo= new UserRepository();
     </div>
 
 
+<!-- courses -->
 
+<div class="allCourses hide" id="allCourses">
+<?php
+include_once '../models/CourseRepository.php';
 
+$cv= new CourseRepository();
+echo $cv->getCourses();
+?>
+</div>
 
+<!-- new course -->
 
 
 
@@ -151,13 +160,13 @@ $userRepo= new UserRepository();
    
    
     
-    
+    </div>
 </form>
 
 
-</div>
-</div>
 
+</div>
+<!-- edit course -->
 <div id="editCourse" class="editCourse hide">
 <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
     <div class="editCForm"> 
@@ -168,20 +177,6 @@ $userRepo= new UserRepository();
 
     <label for="editCHNumber">Chapter Number:</label>
     <input type="number" name="editCHNumber" id="editCHNumber" value="<?= $chapterNumber ?>">
-
-    <!-- <label for="editCHTitle">Chapter Title:</label>
-    <input type="text" name="editCHTitle" id="editCHTitle"> -->
-
-    <!-- <label for="">Chapter Header:</label>
-    <textarea name="" id="" cols="30" rows="10" id="editCHHeader"></textarea>
-
-    <label for="">Chapter Body:</label>
-    <textarea name="" id="" cols="30" rows="10" id="editCHBody"></textarea>
-
-    <label for="">Insert Photo:</label>
-    <input type="file" id="editCFile"> -->
-
-
 
         <div class="editCButtons">
           <input type="submit" value="clear" id="editCClearButton" name="editCClearButton">
@@ -195,9 +190,19 @@ $userRepo= new UserRepository();
 
 </div>
 
+<!-- all words -->
+
+<div class="allWords hide" id="allWords">
+<?php 
+include_once '../models/vocabularyRepository.php';
+$vr= new vocabularyRepository();
+echo $vr->getWords();
+?>
+</div>
+
 <!--vocabulary -->
 <div class="vocabulary hide" id="vocabulary">
-<form action="insertWord.php" method="post">
+<form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
 
 <div class="formContent">
 
@@ -220,15 +225,17 @@ $userRepo= new UserRepository();
 
 <!-- edit word -->
 <div class="editWord hide" id="editWord">
-  <form action="insertWord.php" method="post">
+  <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
       <div class="editWordForm">
 
-      <label for="Kword"></label>
+      <label for="Kword">Keyword:</label>
       <input type="text" name="Kword" id="Kword">
 
       <input type="submit" name="delButton" id="delButton" value="delete">
+      <span style="color:red; font-family:'Courier New'; margin-left:6vw;"><?=$editWordError?></span>
+      
       </div>
-   
+  
 
   </form>
 </div>
@@ -245,7 +252,7 @@ $mRepos->getMessages();
 ?>
 </div>
 
-
+<!-- profile -->
 
     <div id="profile" class="hide">
     
@@ -272,7 +279,7 @@ $mRepos->getMessages();
 
 
 
-         </div>      
+         <!-- </div>       -->
         
 <script src="../js/adminDashboard.js"></script>
 </body>

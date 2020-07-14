@@ -15,7 +15,7 @@ if($roli=='user'){
 
 <html>
     <head>
-        <title>HTML-Course </title>
+        <title>Java Course </title>
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" type="text/css" href="../css/htmlCourseStyle.css">
@@ -119,9 +119,9 @@ include_once '../models/DBConnection.php';
                        $head=$row['head'];
                        $body=$row['body'];
                        $photo=$row['photo'];
-                       echo "<h1 style='width:60vw; font-family: Arial; id=$title'>$chapterNumber. $title</h1>";
-                       echo "<h3 style='width:60vw; font-family: Arial;'>$head</h3>";
-                       echo "<p style='width:60vw; font-family: Arial;'>$body</p>";
+                       echo "<h1 style='width:60vw; font-family: Arial; id=$title'>$chapterNumber. $title</h1><br>";
+                       echo "<h3 style='width:60vw; font-family: Arial;'>$head</h3><br>";
+                       echo "<p style='width:60vw; font-family: Arial;'>$body</p><br><br><br>";
                        echo '<img src="$photo" >';
                      }
                        ?>

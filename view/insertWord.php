@@ -31,7 +31,7 @@ if(isset($_POST["searchButton"])){
     if(empty($_POST["searchField"])){
         $searchFieldError="Write something to search!";
     }else{
-        $kword=$_POST["searchField"];
+        $kword=strtolower($_POST["searchField"]); 
         $vocabularyController= new VocabularyController();
         $word=$vocabularyController->getWord($kword);
    
@@ -45,4 +45,23 @@ if(isset($_POST["searchButton"])){
     }
     
 
+}
+$editWordError="";
+$delKeyword="";
+if(isset($_POST["delButton"])){
+    if(empty($_POST["Kword"])){
+        $editWordError="Please write a word!";
+    }else{
+        
+        $vController = new VocabularyController();
+        $word=$vController->getWord(strtolower($_POST["Kword"]));
+
+        if($word == null){
+            $editWordError="This word does not exist!";
+        }else{
+            $delKeyword=$_POST["Kword"];
+
+            $vController->deleteWord($delKeyword);
+        }
+    }
 }

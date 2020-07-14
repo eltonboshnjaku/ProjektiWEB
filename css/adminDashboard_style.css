@@ -206,7 +206,7 @@ padding-left: 0;
     width: auto;
     height: 10vh;
     position: fixed;   
-    margin-left: 24.5vw;
+    margin-left: 25vw;
   overflow: visible;
     transition:  1s;
     margin-top: 0;
@@ -218,7 +218,7 @@ padding-left: 0;
     width: auto;
     height: 10vh;
     position: absolute;   
-    margin-left: 24.5vw;
+    margin-left: 25vw;
   cursor: pointer;
     transition:  1s;
     margin-top: 0;
@@ -470,17 +470,17 @@ padding-left: 0;
     margin-left: 10vw;
     margin-top: 5vh;
     width: 50vw;
-    height: 60vh;
+    height: 50vh;
     background: rgb(34, 33, 33); 
 }
 .vocabulary form .formContent{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 35vw;
+    width: 25vw;
     height: 60vh;
     
-    margin-left: 7.5vw;
+    margin-left: 12.5vw;
     
     
 }
@@ -513,4 +513,68 @@ padding-left: 0;
     margin-top: 3vh;
     margin-bottom: 1vh;
     margin-left: 10vw;
+}
+.editWord{
+    margin-top: 10vh;
+}
+.editWord form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    width: 50vw;
+    height: 40vh;
+    background: rgb(34, 33, 33); 
+}
+.editWord form .editWordForm label{
+    margin-top: 1vh;
+    margin-bottom: 0.5vh;
+    color: rgb(241, 166, 4);
+    font-family: 'Courier New';
+    text-align: center;
+    font-weight: bold;
+    
+   
+}
+.editWord form .editWordForm{
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 12.5vw;
+    height: 30vh;
+    margin-top: 5vh;
+    
+    
+}
+#Kword{
+    height: 5vh;
+}
+#delButton{
+    width: 5vw;
+    height: 5vh;
+    border-radius: 5px;
+    background: red;
+    color: white;
+    font-family: 'Courier New';
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+    margin-left: 10vw;
+}
+
+#allWords{
+ 
+ overflow: scroll;
+   margin-top: 5vh;
+   margin-left: 2vw;
+   width: 70vw;
+   height: 70vh;
+}
+.allCourses{
+    overflow: scroll;
+   margin-top: 5vh;
+   margin-left: 2vw;
+   width: 70vw;
+   height: 70vh;
+   
 }

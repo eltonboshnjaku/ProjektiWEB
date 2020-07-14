@@ -124,11 +124,11 @@ if($roli=='user'){
 
             <div class="courses">
                 <div class="course">
-                  <a  href="htmlCourse.html" class="kursi"><h3>HTML</h3></a> 
+                  <a  href="htmlCourse.php" class="kursi"><h3>HTML</h3></a> 
                 </div>
       
                 <div class="course">
-                  <a href="cssCourse.html" class="kursi"><h3>CSS</h3></a>
+                  <a href="cssCourse.php" class="kursi"><h3>CSS</h3></a>
                   
                   
               </div>
@@ -138,12 +138,12 @@ if($roli=='user'){
                   
               </div>
               <div class="course" >
-                <a href="phpCourse.html" class="kursi"><h3>PHP</h3></a>
+                <a href="phpCourse.php" class="kursi"><h3>PHP</h3></a>
                   
               </div>
       
               <div class="course" >
-                <a href="" class="kursi"><h3>JAVA</h3></a>
+                <a href="javaCourse.php" class="kursi"><h3>JAVA</h3></a>
                   
               </div>
       
@@ -398,12 +398,12 @@ if($roli=='user'){
  <!-- TECH Vocabulary -->
           <div class="gjuhet">
             <div class="gjuhet_titulli">
-              <a href=""><h2>TECH VOCABULARY</h2></a>
+              <a href="techVocabulary.php"><h2>TECH VOCABULARY</h2></a>
             </div>
             <div class="gjuhet_body">
                 <ul class="gjuhet_lista">
                   
-                    <li style="list-style-type: none; margin: 100px;"><a style="text-decoration:none;" href="techVocabulary.php">Clikc Here To Search.</a></li>
+                    <li style="list-style-type: none; margin: 100px;"><a style="text-decoration:none;" href="techVocabulary.php">Click Here To Search.</a></li>
                 </ul>
               
               

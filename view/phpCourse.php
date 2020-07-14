@@ -14,7 +14,7 @@ if($roli=='user'){
 <!DOCTYPE html>
 <html>
     <head>
-        <title>PHP-Course</title>
+        <title>PHP Course</title>
         <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
         <link rel = "stylesheet" type = "text/css" href = "../css/cssCourseStyle.css"; />

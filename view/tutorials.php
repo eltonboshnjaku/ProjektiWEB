@@ -20,7 +20,7 @@ if($roli=='user'){
 
     <link rel="stylesheet" type="text/css" href="../css/tutorials.css">
     <link rel="stylesheet" type="text/css" href="../css/home_style.css">
-    <title>Document</title>
+    <title>Tutorials</title>
 </head>
 <body>
 

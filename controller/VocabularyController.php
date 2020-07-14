@@ -17,5 +17,8 @@ public function getWord($word){
      return $correctWord;
 }
 
-
+public function deleteWord($word){
+    $vocabularyRepository=new VocabularyRepository();
+    $vocabularyRepository->deleteWord($word);
+}
 }

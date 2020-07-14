@@ -1,6 +1,7 @@
 <?php
 include_once 'course.php';
 include_once 'DBConnection.php';
+
 class CourseRepository{
     private $connection;
     private $course;
@@ -74,5 +75,38 @@ public function deleteChapter($courseN,$chapterNum){
 
     
     $statement->execute();
+}
+
+
+public function getCourses(){
+   
+    $sql="SELECT * FROM course";
+   $stmt = $this->connection->query($sql);
+
+    echo 
+    '<table width="100%" border="1" style="color:rgb(241, 166, 4);  " >
+    <tr>
+    <th style="background:rgb(34, 33, 33);">ID:</th>
+    <th style="background:rgb(34, 33, 33);">COURSE NAME:</th>
+    <th style="background:rgb(34, 33, 33);">CHAPTER NUMBER:</th>
+    <th style="background:rgb(34, 33, 33);">TITLE:</th>
+   
+   
+    </tr>';
+
+    foreach($stmt as $row){
+        echo '
+        <tr>
+        <td style="background:white; text-align: center; color:black;">'.$row['id'].'</td>
+        <td style="background:white; text-align: center; color:black; ">'.$row['courseName'].'</td>
+        <td style="background:white; text-align: center; color:black; ">'.$row['chapterNumber'].'</td>
+        <td style="background:white; text-align: center; color:black;">'.$row['title'].'</td>
+       
+
+
+        </tr>';
+    }
+echo '</table>';
+
 }
 }

@@ -50,11 +50,11 @@ public function create(Useri $user){
      foreach($stmt as $row){
          echo '
          <tr>
-         <td style="background:white; color:black;">'.$row['id'].'</td>
-         <td style="background:white; color:black;">'.$row['username'].'</td>
-         <td style="background:white; color:black;">'.$row['pw'].'</td>
-         <td style="background:white; color:black;">'.$row['email'].'</td>
-         <td style="background:white; color:black;">'.$row['role'].'</td>
+         <td style="background:white; text-align: center; color:black;">'.$row['id'].'</td>
+         <td style="background:white; text-align: center; color:black;">'.$row['username'].'</td>
+         <td style="background:white; text-align: center; color:black;">'.$row['pw'].'</td>
+         <td style="background:white; text-align: center; color:black;">'.$row['email'].'</td>
+         <td style="background:white; text-align: center; color:black;">'.$row['role'].'</td>
 
 
          </tr>';

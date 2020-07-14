@@ -6,6 +6,7 @@ var editCoursePanel=document.getElementById("editCourse");
 var messagesPanel=document.getElementById("messages");
 var profilePanel=document.getElementById("profile");
 var vocabularyPanel = document.getElementById("vocabulary");
+var editWordPanel = document.getElementById("editWord");
 
 function showUsers(){
     usersPanel.classList.remove("hide");
@@ -14,6 +15,7 @@ function showUsers(){
     hideMessages();
     hideProfile();
     hideVocabulary();
+    hideEditWord();
 }
 
 function newCourse(){
@@ -23,6 +25,7 @@ function newCourse(){
     hideMessages();
     hideProfile();
     hideVocabulary();
+    hideEditWord();
 }
 
 function editCourse(){
@@ -32,6 +35,7 @@ function editCourse(){
     hideMessages();
     hideProfile();
     hideVocabulary();
+    hideEditWord();
 }
 function showMessages(){
     messagesPanel.classList.remove("hide");
@@ -40,6 +44,7 @@ function showMessages(){
     hideUsers();
     hideProfile();
     hideVocabulary();
+    hideEditWord();
 }
 
 function showProfile(){
@@ -49,6 +54,7 @@ function showProfile(){
     hideMessages();
     hideUsers();
     hideVocabulary();
+    hideEditWord();
 }
 function showVocabulary(){
     vocabularyPanel.classList.remove("hide");
@@ -57,8 +63,17 @@ function showVocabulary(){
     hideMessages();
     hideUsers();
     hideProfile();
+    hideEditWord();
 }
-
+function showEditWord(){
+    editWordPanel.classList.remove("hide");
+    hideNewCourse();
+    hideEditCourse();
+    hideMessages();
+    hideUsers();
+    hideProfile();
+    hideVocabulary();
+}
 function hideMessages(){
     messagesPanel.classList.add("hide");
 }
@@ -79,4 +94,6 @@ function hideVocabulary(){
     vocabularyPanel.classList.add("hide");
 }
 
-
+function hideEditWord(){
+    editWordPanel.classList.add("hide");
+}

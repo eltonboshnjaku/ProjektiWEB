@@ -73,23 +73,20 @@ if($roli=='user'){
               <li onclick="showUsers()" id="users">Users</li>
               <li id="courses">Courses
             
-               <ul id="cList" > 
-              <li onclick=" newCourse()" id="newC" >New Course</li>
-              <li onclick="editCourse() "id="editC">Edit Courses</li>
-
-               </ul> 
-            
-            </li>
+                  <ul id="cList" > 
+                    <li onclick=" newCourse()" id="newC" >New Course</li>
+                    <li onclick="editCourse() "id="editC">Edit Courses</li>
+                  </ul> 
+               </li>
               
-              <li id="tutorials">Tutorials
-
-
-             <ul id="tList">
-                 <li>New Tutorial</li>
-                 <li>Edit Tutorial</li>
-             </ul>
-             </li>
-             <li id="messag" onclick="showVocabulary() ">Vocabulary</li> 
+          
+             <li id="vocab" >Vocabulary
+             
+                  <ul id="vList">
+                      <li onclick="showVocabulary() ">New Word</li>
+                      <li onclick="showEditWord() ">Edit Word</li>
+                  </ul>
+             </li> 
               <li id="messag" onclick="showMessages() ">Messages</li> 
 
               
@@ -198,18 +195,9 @@ $userRepo= new UserRepository();
 
 </div>
 
-<!--new tutorials -->
-<div>
-
-</div>
-<!--edit tutorials -->
-<div>
-
-</div>
-
 <!--vocabulary -->
 <div class="vocabulary hide" id="vocabulary">
-<form action="" method="post">
+<form action="insertWord.php" method="post">
 
 <div class="formContent">
 
@@ -228,6 +216,21 @@ $userRepo= new UserRepository();
    
     
 </form>
+</div>
+
+<!-- edit word -->
+<div class="editWord hide" id="editWord">
+  <form action="insertWord.php" method="post">
+      <div class="editWordForm">
+
+      <label for="Kword"></label>
+      <input type="text" name="Kword" id="Kword">
+
+      <input type="submit" name="delButton" id="delButton" value="delete">
+      </div>
+   
+
+  </form>
 </div>
 <!-- messages -->
 <div class="messages hide" id="messages">

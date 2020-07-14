@@ -213,7 +213,7 @@ padding-left: 0;
     cursor: pointer;
   
 }  
-.menu ul li #tList{
+.menu ul li #vList{
     bottom: 65.02vh;
     width: auto;
     height: 10vh;
@@ -226,16 +226,16 @@ padding-left: 0;
   
 } 
 
-.menu ul #tutorials:hover #tList li
+.menu ul #vocab:hover #vList li
 {
   display: block;
    
 }
- .menu ul #courses:hover #cList li
+  .menu ul #courses:hover #cList li
 {
   display: block;
    
-} 
+}  
 
 
 .hide{

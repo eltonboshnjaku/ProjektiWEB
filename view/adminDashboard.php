@@ -1,6 +1,6 @@
 
 <?php
-//session_start();
+
 include_once 'createCourses.php';
 include_once 'registerUsers.php';
 include_once 'insertWord.php';
@@ -150,7 +150,9 @@ echo $cv->getCourses();
     <textarea name="courseHeader" id="cHeader" cols="30" rows="10" value="<?= $chapterHeader ?>"></textarea >
     
     <label for="courseBody">Chapter Body:</label>
-    <textarea name="courseBody" id="cBody" cols="30" rows="10" value="<?= $chapterBody ?>"></textarea>
+    <textarea name="courseBody" id="cBody" cols="30" rows="10" value="<?= $chapterBody ?>">
+ 
+  </textarea>
     <label for="courseBody">Insert Photo:</label>
     <input type="file" name="fileInput" id="fileInput">
     <div class="buttons">

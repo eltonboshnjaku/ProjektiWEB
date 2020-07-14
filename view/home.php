@@ -427,7 +427,7 @@ if($roli=='user'){
                       <li class="footerLink"><a href = "techVocabulary.php">Tech Vocabulary</a></li>
                       <li class="footerLink"><a href = "aboutUs.php">About Us</a></li>
                       <li class="footerLink"><a href = "privacyPolicy.html">Privacy Policy</a></li>
-                      <li class="footerLink"><a href = "https://github.com/eltonboshnjaku/WEB-PROGRAMIM">Repository</a></li>
+                      <li class="footerLink"><a href = "https://github.com/eltonboshnjaku/ProjektiWEB">Repository</a></li>
                   </ul>
               </div>
             <div class="footer-section contact" style="width: 40vw;">

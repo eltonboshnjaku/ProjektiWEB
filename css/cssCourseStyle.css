@@ -126,85 +126,85 @@
     margin-top: 15px;
 
 }
-
 .main{
     display: flex;
 }
 .kursetHTML{
-    height: 500px;
-    width: 200px;
+    height: 78vh;
+    width: 15vw;
      background: rgb(241, 166, 4);
     display: flex;
     flex-direction: column; 
-    margin-top: 30px;
-    border: 2px outset;
-  overflow: auto;
+    border-bottom: 3vh solid rgb(241, 166, 4); 
+   border-top: 1px solid white;
+    overflow:auto;
+ 
 
-position: sticky;
+     position: fixed;
+     z-index: 3000; 
     
+
    
     
-
-    
-    
 }
-/* .kursetHTML::-webkit-scrollbar{
-    width: 25px;
-} */
+
+
 .kursetHTML ul li  {
     
     list-style: none;
-    
+   
     
 }
-.kursetHTML ul li a:hover {
-    background: rgb(34, 33, 33);
-    font-size: 1.2vw;    
-}
+.kursetHTML ul li a:hover {background: rgb(34, 33, 33);}
 
 .kursetHTML ul li a {
-    display: flex;
-    justify-content: center;
     text-decoration: none;
     color: white;
-    margin-top: 15px;
+    font-size: 1vw;
     list-style: none;
-    width: 150px;
-    height: 50px;
+    width: 12vw;
+    height: 6vh;
     display: flex;
     justify-content: center;
     background: rgb(43, 40, 40);
-    padding-top: 25px;
-    font-family: "Segoe UI,Arial,sans-serif";
-    margin-left: -20px;
-    margin-top: 5px;
-    margin-right: 20px;
+    padding-top: 3vh;
+    font-family: 'Courier New'; 
+    margin-left: 1.25vw;
+     margin-top: 0.75vh; 
+     margin-bottom: 0.75vh;
+    
+    
 
     
 }
 
 .allCourses
 {
+    min-height: 60vh;
     margin-top: 30px;
-    margin-left: 120px;
-    border:2px outset;
-    width: 60vw;
+    margin-left: 25vw;
+    border:2px outset ;
 }
 
 .content {
-    margin-left: 10px;
-    font-size: 18px;
+    margin-left: 2vw;
+    font-size: 1.2vw;
     width: 70vw;
     height: auto;
-    overflow: scrolls;
+
+    
 }
-    #footer{
-        background-color: #26262e;
-        color: #d3ded3;
-        height: 260px;
-        width: 98vw;
-        margin-top: 20px;
-    } 
+
+#footer {
+    background-color: #26262e;
+    color: #d3ded3;
+    /* height: 260px; */
+    /* width: 98vw; */
+    height: 35vh;
+    width: 85vw;
+    margin-left: 15vw;
+    margin-top: 20px;
+}
 .footer-content {
     height: 100%;
     display: flex;
@@ -213,7 +213,7 @@ position: sticky;
 #footer .footer-section {
     flex: 1;
     border: 1px solid white;
-    padding: 25px;
+    padding: 25px; 
 }
 
 #footer .footer-content .contact {
@@ -227,27 +227,27 @@ position: sticky;
 #footer .footer-content .about h2 {
     padding-top: 0px;
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 0.7vh;
     font-family: 'Courier New', Courier, monospace;
 }
 
 #footer .footer-content .about h2 #webname-style {
     color: rgb(218, 91, 18);
 }
-
-#footer .footer-text {
-    font-size: 40px;
+/* #footer .footer-text {
+    font-size: 6vh;
     height: 60px;
-}
+} */
+
 #footer .footer-section > p {
-    margin-left: 30%;
-    width: 200px;
-    font-size: 18px;
+    margin-left: 26%;
+    width: 10vw;
+    font-size: 1.2vw;
 }
 
 .footer-content > .links .footerLink {
     list-style-type: square;
-    margin-bottom: 5px;
+    margin-bottom: 0.6vh;
     font-size: 1.5vw;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -271,13 +271,13 @@ position: sticky;
 
 .footer-content .contact textarea {
     color: white;
-    font-size: 15px;
-    padding: 5px 0 0 5px;
+    font-size: 1vw;
+    padding: 0.5vw 0 0 0.5vw;
     border: 2px solid rgb(84, 91, 99);
     border-radius: 4px;
     margin-bottom: 2px;
     background-color: rgb(15, 17, 13);
-    width: 35vw;
+    width: 30vw;
 }
 
 .footer-content .contact textarea:focus {
@@ -287,12 +287,15 @@ position: sticky;
 .footer-content .contact input {
     color: rgb(12, 20, 0);
     border: 1px solid white;
-    border-radius: 7px;
+    border-radius: 5px;
     background-color: #636463;
-    height: 28px;
-    width: 180px;
-    padding-left: 5px;
+    height: 4vh;
+    width: 10vw;
+    padding-left: 1vw;
     color: oldlace;
+    margin-bottom: 0.5vh;
+    margin-top: 1vh;
+    font-size: 1vw;
 }
 
 .footer-content .contact input:focus {
@@ -305,49 +308,19 @@ position: sticky;
 
 .footer-content .contact button {
     background-color: rgb(10, 182, 24);
-    border-radius: 7px;
+    border-radius: 5px;
     border: none;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-    margin: 10px 0 0 100px;
-    width: 100px;
-    height: 30px;
-    position: relative;
-    float: right; 
+    color: white;  
+    width: 5vw;
+    height: 5vh;
+    margin-top: 1vh;
+    font-size: 1vw;
+    
 }
 
-table {
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-td,th {
-    border: 2px solid rgb(119, 119, 119);
-    padding: 8px;
-}
 
-tr:nth-child(even) {
-    background-color: #ddd;
-}
-
-button {
-    background-color: rgb(92, 167, 92);
-    width: 160px;
-    height: 60px;
-    box-shadow: 4px 2px 4px rgb(26, 23, 24);
-    margin-bottom: 40px;
-    border-radius: 30px;
-    border: none;
-}
-
+/* 
 button a {
-    color: rgb(230, 224, 203);
+    color: rgb(238, 237, 231);
     font-size: 16px;
-}
-
-.kodi {
-    border-left: 3px solid green;
-    margin-left: 3px;
-}
-.kodi p {
-    margin-left: 10px;
-}
+} */

@@ -66,7 +66,7 @@ include_once '../models/DBConnection.php';
           $conn=new dataBaseConnection();
           $connection=$conn->startConnection();
    
-         $sql="SELECT * FROM course WHERE courseName='html' ";
+         $sql="SELECT * FROM course WHERE courseName='html' ORDER BY chapterNumber";
          $stmt = $connection->query($sql);
    
        
@@ -104,7 +104,7 @@ include_once '../models/DBConnection.php';
                       $conn=new dataBaseConnection();
                       $connection=$conn->startConnection();
                
-                     $sql="SELECT * FROM course WHERE courseName='html'";
+                     $sql="SELECT * FROM course WHERE courseName='html' ORDER BY chapterNumber";
                      $stmt = $connection->query($sql);
                
                    
@@ -118,9 +118,9 @@ include_once '../models/DBConnection.php';
                        $head=$row['head'];
                        $body=$row['body'];
                        $photo=$row['photo'];
-                       echo "<h1 style='width:60vw; font-family: Arial; id=$title'>$chapterNumber. $title</h1>";
-                       echo "<h3 style='width:60vw; font-family: Arial;'>$head</h3>";
-                       echo "<p style='width:60vw; font-family: Arial;'>$body</p>";
+                       echo "<h1 style='width:60vw; font-family: Arial; id=$title'>$chapterNumber. $title</h1><br>";
+                       echo "<h3 style='width:60vw; font-family: Arial;'>$head</h3><br>";
+                       echo "<p style='width:60vw; font-family: Arial;'>$body</p><br><br><br>";
                        echo '<img src="$photo" >';
                      }
                        ?>
@@ -154,42 +154,43 @@ include_once '../models/DBConnection.php';
 
 
 <div id = "footer">
-    <div class = "footer-content">
-        <div class="footer-section about" style="width: 30vw">
-            <h2 class = "footer-text" style = "font-size: 2vw;"> <span id = "webname-style">Prog</span>Tut</h2>
-            <p>
-                The World's Largest Web Developer Site.
-                Was Your Dream To Be A Programmer?
-                Here You Can Do It!
-            </p>
-        </div>
-        <div class="footer-section links">
-            <h3>Links</h3>
-            <ul>
+          <div class = "footer-content">
+              <div class="footer-section about" style="width: 30vw;">
+                  <h2 class = "footer-text" style="font-size: 2vw;"><span id = "webname-style">Prog</span>Tut</h2>
+                  <p>
+                    The World's Largest Web Developer Site.
+                    Was Your Dream To Be A Programmer?
+                    Here You Can Do It!
+                  </p>
+              </div>
+              <div class="footer-section links">
+                  <h3>Links</h3>
+                  <ul>
                       <li class="footerLink"><a href = "home.php">Home</a></li>
                       <li class="footerLink"><a href = "tutorials.php">Tutorials</a></li>
                       <li class="footerLink"><a href = "techVocabulary.php">Tech Vocabulary</a></li>
                       <li class="footerLink"><a href = "aboutUs.php">About Us</a></li>
                       <li class="footerLink"><a href = "privacyPolicy.html">Privacy Policy</a></li>
-                      <li class="footerLink"><a href = "https://github.com/eltonboshnjaku/WEB-PROGRAMIM">Repository</a></li>
+                      <li class="footerLink"><a href = "https://github.com/eltonboshnjaku/ProjektiWEB">Repository</a></li>
                   </ul>
+              </div>
+            <div class="footer-section contact" style="width: 40vw;">
+                <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
+                  <h3>Feedback</h3>
+                    <textarea name = "feedback" cols = "50" rows = "4" placeholder = "Suggest us..."></textarea>
+                    <br>
+                    <div class = "te_dhenat">
+                        <label for = "emri"></label>
+                        <input style="width: 15vw;" type = "name" id = "emri" name = "emri" placeholder = "Your name" />
+                        <label for = "email"></label>
+                        <input style="width: 15vw;" type = "email" id="email" name = "email" placeholder="Your email" />
+                    </div>
+                    <button type = "submit" style="width: 8vw;" name="saveButton">Save</button>
+                </form>
+                <span></span>
+            </div>
+          </div>
         </div>
-        <div class="footer-section contact" style = "width: 40vw;">
-            <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
-            <h3>Feedback</h3>
-                <textarea name = "feedback" cols = "50" rows = "4" placeholder = "Sugjeroni..."></textarea>
-                <br>
-                <div class = "te_dhenat">
-                    <label for = "emri"></label>
-                    <input  style = "width:15vw" type = "name" id = "emri" name = "emri" placeholder = "Shenoni emrin tuaj" />
-                    <label for = "email"></label>
-                    <input style = "width:15vw" type = "email" id="email" name = "email" placeholder="Shenoni email tuaj" />
-                </div>
-                <button type = "submit">Dergo</button>
-            </form>
-        </div>
-    </div>
-    </div>
 
        
       

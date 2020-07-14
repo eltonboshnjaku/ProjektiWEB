@@ -34,7 +34,7 @@ public function create(Useri $user){
 
  public function getUsers(){
    
-     $sql="SELECT * FROM Useri";
+     $sql="SELECT * FROM Useri ORDER BY id";
     $stmt = $this->connection->query($sql);
 
      echo 

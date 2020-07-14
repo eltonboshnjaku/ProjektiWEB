@@ -117,24 +117,25 @@ if($roli=='user'){
                       <li class="footerLink"><a href = "techVocabulary.php">Tech Vocabulary</a></li>
                       <li class="footerLink"><a href = "aboutUs.php">About Us</a></li>
                       <li class="footerLink"><a href = "privacyPolicy.html">Privacy Policy</a></li>
-                      <li class="footerLink"><a href = "https://github.com/eltonboshnjaku/WEB-PROGRAMIM">Repository</a></li>
+                      <li class="footerLink"><a href = "https://github.com/eltonboshnjaku/ProjektiWEB">Repository</a></li>
                   </ul>
               </div>
             <div class="footer-section contact" style="width: 40vw;">
-                <form>
+                <form action="<?= $_SERVER['PHP_SELF']; ?>" method="POST">
                   <h3>Feedback</h3>
-                    <textarea name = "feedback" cols = "50" rows = "4" placeholder = "Sugjeroni..."></textarea>
+                    <textarea name = "feedback" cols = "50" rows = "4" placeholder = "Suggest us..."></textarea>
                     <br>
                     <div class = "te_dhenat">
                         <label for = "emri"></label>
-                        <input style="width: 15vw;" type = "name" id = "emri" name = "emri" placeholder = "Shenoni emrin tuaj" />
+                        <input style="width: 15vw;" type = "name" id = "emri" name = "emri" placeholder = "Your name" />
                         <label for = "email"></label>
-                        <input style="width: 15vw;" type = "email" id="email" name = "email" placeholder="Shenoni email tuaj" />
+                        <input style="width: 15vw;" type = "email" id="email" name = "email" placeholder="Your email" />
                     </div>
-                    <button type = "submit" style="width: 8vw;">Dergo</button>
+                    <button type = "submit" style="width: 8vw;" name="saveButton">Save</button>
                 </form>
+                <span></span>
             </div>
           </div>
-        </div>
+   
     </body>
 </html>

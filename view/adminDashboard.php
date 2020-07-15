@@ -140,23 +140,23 @@ echo $cv->getCourses();
     <span style="color:red; font-family: 'Courier New' "><?=$alertMessage?></span>
 
     <label for="courseName">Course Name:</label>
-    <input type="text" name="courseName" id="cName" value="<?= $courseName ?>">
+    <input type="text" name="courseName" id="cName" value="">
     
     <label for="chapterNumber">Chapter Number:</label>
-    <input type="number" name="chapterNumber" id="cNum" value="<?= $chapterNumber ?>" >
+    <input type="number" name="chapterNumber" id="cNum" value="" >
     <label for="courseTitle">Chapter Title:</label>
-    <input type="text" name="courseTitle" id="cTitle" value="<?= $chapterTitle ?>">
+    <input type="text" name="courseTitle" id="cTitle" value="">
     <label for="courseHeader">Chapter Header:</label>
-    <textarea name="courseHeader" id="cHeader" cols="30" rows="10" value="<?= $chapterHeader ?>"></textarea >
+    <textarea name="courseHeader" id="cHeader" cols="30" rows="10" value=""></textarea >
     
     <label for="courseBody">Chapter Body:</label>
-    <textarea name="courseBody" id="cBody" cols="30" rows="10" value="<?= $chapterBody ?>">
+    <textarea name="courseBody" id="cBody" cols="30" rows="10" value=">">
  
   </textarea>
     <label for="courseBody">Insert Photo:</label>
     <input type="file" name="fileInput" id="fileInput">
     <div class="buttons">
-    <input type="submit" value="clear" id="clearButton" value=" <?= $chapterPhoto ?> ">
+    <input type="submit" value="clear" id="clearButton" value="  ">
    <input type="submit" value="save" id="saveButton" name="saveButton"  onclick=" newCourse()">
     </div>
    

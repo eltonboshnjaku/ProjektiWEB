@@ -50,23 +50,19 @@ if(isset($_POST['loginButton'])){
           $uname= $user->getUsername();
           $pas=$user->getPassword();
           $mail=$user->getEmail();
-          
+          $roli=$user->getRoli();
          
 
         
-        $_SESSION['role']=$user->getRoli();
-        $_SESSION['username']=$user->getUsername();
-        $_SESSION['password']=$user->getPassword();
-        $_SESSION['email']=$user->getEmail();
+        // $_SESSION['role']=$user->getRoli();
+        // $_SESSION['username']=$user->getUsername();
+        // $_SESSION['password']=$user->getPassword();
+        // $_SESSION['email']=$user->getEmail();
+        $_SESSION['role']=$roli;
+        $_SESSION['username']=$uname;
+        $_SESSION['password']=$pas;
+        $_SESSION['email']=$mail;
           
-          // if($user->getRoli()=='admin'){
-           
-          //   header('location:home.php');
-          // }
-          
-            
-         
-            
             header('location:home.php');
           
           

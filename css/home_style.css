@@ -30,9 +30,16 @@ body {
      padding-top: 4vh; 
     
 }
-
+@keyframes bar{
+    from{top:-1vh;}
+    to{top:0vh;}
+}
 .bar > li{
     list-style: none;
+    position: relative;
+    animation-name: bar;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 
@@ -448,3 +455,5 @@ margin-right: 90px;
 }
 
 .hide{display: none;}
+
+

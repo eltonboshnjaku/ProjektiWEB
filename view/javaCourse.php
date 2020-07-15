@@ -10,6 +10,8 @@ if($roli=='user'){
 }else{
   $hide="";
 }
+echo $roli;
+echo $hide;
 ?>
 <!DOCTYPE html>
 
@@ -50,6 +52,7 @@ if($roli=='user'){
                 <li ><a class="bar_item" href="tutorials.php">Tutorials</a> </li>
                 <li ><a class="bar_item" href="techVocabulary.php">Tech Vocabulary</a> </li>
                 <li ><a class="bar_item" href="aboutUs.php">About Us</a> </li>
+               
                 <li ><a id="admDashboard" class="bar_item <?=$hide?>  " href="adminDashboard.php">Dashboard</a> </li> 
                 <li><a class="bar_item" href="login.php">Log Out</a>
                 

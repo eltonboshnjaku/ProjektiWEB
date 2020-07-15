@@ -30,6 +30,7 @@ body {
      margin-top: 2.5vh; 
     position: fixed;
      padding-top: 4vh; 
+     z-index: 3000;
     
 }
 
@@ -68,7 +69,7 @@ body {
     margin-top: 0px;
     text-align: center; 
   position: fixed;
-    
+  z-index: 3000;
    
   
 }

@@ -4,14 +4,16 @@ include_once 'createCourses.php';
 include_once 'registerUsers.php';
 include_once 'insertMessage.php';
 
+if(empty($_SESSION['loggedin'])){
+  header('location:login.php');
+}
 $roli=$_SESSION['role'];
 if($roli=='user'){
   $hide='hide';
 }else{
   $hide="";
 }
-echo $roli;
-echo $hide;
+
 ?>
 <!DOCTYPE html>
 
@@ -54,7 +56,7 @@ echo $hide;
                 <li ><a class="bar_item" href="aboutUs.php">About Us</a> </li>
                
                 <li ><a id="admDashboard" class="bar_item <?=$hide?>  " href="adminDashboard.php">Dashboard</a> </li> 
-                <li><a class="bar_item" href="login.php">Log Out</a>
+                <li><a class="bar_item" href="logout.php">Log Out</a>
                 
  
             </ul>
@@ -84,7 +86,8 @@ include_once '../models/DBConnection.php';
            $body=$row['body'];
            $photo=$row['photo'];
           echo "<ul>
-          <li><a href='#.$title'>$title</a></li>
+         
+          <li><a href='#$id'>$title</a></li>
           </ul>
           ";
          }
@@ -122,10 +125,11 @@ include_once '../models/DBConnection.php';
                        $head=$row['head'];
                        $body=$row['body'];
                        $photo=$row['photo'];
-                       echo "<h1 style='width:60vw; font-family: Arial; id=$title'>$chapterNumber. $title</h1><br>";
+                       echo "<h1 style='width:60vw; font-family: Arial; id='$id''>$chapterNumber. $title</h1><br>";
                        echo "<h3 style='width:60vw; font-family: Arial;'>$head</h3><br>";
                        echo "<p style='width:60vw; font-family: Arial;'>$body</p><br><br><br>";
                        echo '<img src="$photo" >';
+                      
                      }
                        ?>
 

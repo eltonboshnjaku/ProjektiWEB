@@ -3,7 +3,9 @@
 
 include_once 'registerUsers.php';
 
-
+if(empty($_SESSION['loggedin'])){
+    header('location:login.php');
+  }
 $roli=$_SESSION['role'];
 if($roli=='user'){
   $hide='hide';
@@ -48,7 +50,7 @@ if($roli=='user'){
                  <li ><a class="bar_item" href="techVocabulary.php">Tech Vocabulary</a> </li>
                  <li ><a class="bar_item" href="aboutUs.php">About Us</a> </li>
                  <li ><a id="admDashboard" class="bar_item <?=$hide?>  " href="adminDashboard.php">Dashboard</a> </li> 
-                 <li><a class="bar_item" href="login.php">Log Out</a>
+                 <li><a class="bar_item" href="logout.php">Log Out</a>
                  
   
              </ul>

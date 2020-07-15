@@ -4,13 +4,17 @@ include_once 'createCourses.php';
 include_once 'registerUsers.php';
 include_once 'insertMessage.php';
 
+if(empty($_SESSION['loggedin'])){
+  header('location:login.php');
+}
+  
 $roli=$_SESSION['role'];
 if($roli=='user'){
   $hide='hide';
 }else{
   $hide="";
 }
- 
+
 ?>
 <!DOCTYPE html>
 
@@ -59,7 +63,8 @@ if($roli=='user'){
                 <li ><a class="bar_item" href="techVocabulary.php">Tech Vocabulary</a> </li>
                 <li ><a class="bar_item" href="aboutUs.php">About Us</a> </li>
                 <li ><a id="admDashboard" class="bar_item <?=$hide?>  " href="adminDashboard.php">Dashboard</a> </li> 
-                <li><a class="bar_item" href="login.php">Log Out</a>
+
+                <li><a class="bar_item" href="logout.php" >Log Out </a></li>
                 
  
             </ul>
@@ -452,3 +457,4 @@ if($roli=='user'){
         <script src="../js/homeJS.js"></script>
     </body>
 </html>
+

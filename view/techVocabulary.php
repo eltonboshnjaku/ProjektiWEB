@@ -1,11 +1,14 @@
 <?php
 include_once '../controller/VocabularyController.php';
 include_once 'insertWord.php';
-
+include_once 'autocomplete.php';
 //session_start();
 
 include_once 'registerUsers.php';
 
+if(empty($_SESSION['loggedin'])){
+  header('location:login.php');
+}
 
 $roli=$_SESSION['role'];
 if($roli=='user'){
@@ -25,7 +28,7 @@ if($roli=='user'){
 </head>
 <body>
 
-    
+<div class="background">
         
 <div class="header" id="header"> 
            
@@ -55,36 +58,61 @@ if($roli=='user'){
                 <li ><a class="bar_item" href="techVocabulary.php">Tech Vocabulary</a> </li>
                 <li ><a class="bar_item" href="aboutUs.php">About Us</a> </li>
                 <li ><a id="admDashboard" class="bar_item <?=$hide?>  " href="adminDashboard.php">Dashboard</a> </li> 
-                <li><a class="bar_item" href="login.php">Log Out</a>
+                <li><a class="bar_item" href="logout.php">Log Out</a>
                 
  
             </ul>
              </div>
     
-        <div class="searchPart">
+
+
+
+
+
+<img id="vocabPht" src="../photos/vocaBack.jpg" alt="">
+
+
+<div  class="searchPart">
 
         
 <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
-    <input type="text" id="search"    name="searchField" placeholder="write here...">
+    <input type="text" id="search"    name="searchField" placeholder="  write here..." autocomplete="off">
     <input type="submit" id="searchButton"  readonly value="search" name="searchButton">
 </form>
 
 
-<h2 class="searchTitle" >Over 10,000 tech words meaning</h2>
+
+
+
+<h1 class="searchTitle" >TECHOPEDIA</h1>
 </div>
 <div class="alertPart">
 <span style="color:red;"><?=$searchFieldError?></span>
 <span style="color:red;"><?=$null?></span>
 </div>
 
-<div class="resultPart">
+<!-- <div style="border:1px solid red; width:40vw;" class="autocomplete">
+   <?php
+  echo autocomplete();
+  ?> 
+
+</div> -->
+
+
+<div class="resultPart" style="position:absolute;">
 
 
      <h3 style="color: red; " class="hide" id="alertText"></h3>
     
-    <h1 style="font-family:arial; margin-bottom:3vh; "><?=$correctWord?></h1>
-    <p style="font-family:arial;"><?=$correctDescription?></p>
+    <h1 style="font-family:arial; margin-top:3vh; margin-bottom:3vh; margin-left:5vw; font-size:6vh;"><?=$correctWord?></h1>
+    <p style="font-family:arial; font-size:3vh; width:80vw; margin-left:5vw;"><?=$correctDescription?></p>
 </div>
+
+
+
+</div>
+
+        
 
 
     

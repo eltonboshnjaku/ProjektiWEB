@@ -62,6 +62,9 @@ if(isset($_POST['loginButton'])){
         $_SESSION['username']=$uname;
         $_SESSION['password']=$pas;
         $_SESSION['email']=$mail;
+        $_SESSION['loggedin']='true';
+       
+  
           
             header('location:home.php');
           
@@ -86,14 +89,26 @@ if(isset($_POST['loginButton'])){
   }
 
 
-  
+ 
 
   
     
+
   
-  
-  
-}else if(isset($_POST['registerBtn'])){
+}else{
+  // header('Location: login.php');
+}
+// else{
+//   $_SESSION['loggedin'] ='false';
+//   if($_SESSION['loggedin'] !='true'){
+//     session_destroy();
+//   }
+// }
+
+
+
+
+if(isset($_POST['registerBtn'])){
  
   if(empty($_POST['email'])){
     $registerEmailError='E-mail is required!';

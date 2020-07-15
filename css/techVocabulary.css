@@ -1,7 +1,5 @@
 *{margin:0; padding:0;}
-body {
-    background: white;
-}
+
 .header{
     list-style-type: none;
     display: flex;
@@ -22,32 +20,34 @@ body {
     display: flex;
     justify-content: flex-start;
     background: rgb(43, 40, 40);
-   width: 75vw;
-margin-left: 25vw;
-    height: 15vh;
-    margin-top: 2.5vh;
+    width: 75vw;
+    margin-left: 25vw;
+    height: 11vh;
+     margin-top: 2.5vh; 
     position: fixed;
-    
+     padding-top: 4vh; 
+    z-index: 3000;
 }
-.bar{
-
+@keyframes bar{
+    from{top:-1vh;}
+    to{top:0vh;}
 }
 .bar > li{
     list-style: none;
+    position: relative;
+    animation-name: bar;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 
 .bar_item{
     display: flex;
     justify-content: center;
-    width: 9vw;
-    
-    height: 6vh;
-    padding-top: 5px;
+    width: 9vw;   
+    height: 6vh;     
     border-radius: 5px;
     text-align: center;
-    margin-top: 15px;
-
     margin-left: 1.3vw;
     background: rgb(241, 166, 4);
     color: white;
@@ -67,7 +67,7 @@ margin-left: 25vw;
     margin-top: 0px;
     text-align: center; 
   position: fixed;
-    
+  z-index: 3000;
    
   
 }
@@ -88,17 +88,31 @@ margin-left: 25vw;
    
     
 }
-.header ul li ul li {
-    display: none;
-    width: 100%;
-    height: 6vh;
-    background:rgb(241, 166, 4) ;
+ .header ul li ul li  {
+ 
+   
+    list-style: none;
+  
+} 
+.header ul li ul li  a{
+    display: flex;
+    justify-content: center;
+    width: 9vw;   
+    height: 6vh;     
+    border-radius: 5px;
+    text-align: center;
+   
+    background: rgb(241, 166, 4);
+    color: white;
+    text-decoration: none;
+     font-family: 'Courier New'; 
+    font-size: 1.2vw;
     list-style: none;
     margin-top: 2px;
     border-radius: 5px;
     text-align: center;
     transition: ease 0.5s;
-    font-size: 1.4vw;
+    display: none;
 }
 .header ul li ul{
     margin-left:1.3vw ;
@@ -107,19 +121,17 @@ margin-left: 25vw;
     
 }
 
-.header ul li ul li:hover{
+.header ul li ul li a:hover{
     background: rgb(201, 132, 5);
     font-size: 1.5vw;
 }
-.courseSubMenu{
+ .courseSubMenu{
     text-decoration: none;
-    color: white;
-    font-family: 'Courier New';
-   
+    list-style: none;
   
     
-}
-.header ul li:hover ul li{
+} 
+.header ul li:hover ul li a{
     display: block;
 }
 
@@ -132,30 +144,39 @@ margin-left: 25vw;
 }
 
 
-.searchPart{
+.searchPart{    
     margin-left: 5vw;
-    margin-top: 10vh;
-    background: white;
+    margin-top: 15vh;
+    
     width: 90vw;
     height:5vh;
    display: flex;
    justify-content: space-between;
+   z-index: 2;
+   position: absolute;
 }
 .searchTitle{
-    text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 2px #c59510;
-    text-decoration: rgb(241, 166, 4);
-    text-decoration: underline;
-    color: black;
-    font-family: 'Segoe Print';
+    position: absolute;
+    text-shadow: 0 0 10px rgb(235, 172, 0), 0 0 2px #f0cc00;
+    text-decoration: rgb(229, 255, 0);
+   font-size: 7vh;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 2;
+    margin-left: 67vw;
 }
 .resultPart{
-    border: 1px solid green;
+    opacity: 0.9;
+    position: absolute;
+    background: white;
     margin-left: 5vw;
-    margin-top: 5vh;
-    height: 70vh;
+    margin-top: 35vh;
+    height: 60vh;
     width: 90vw;
     border: 2px outset;
     overflow: auto;
+    
+    z-index: 2;
 }
 .alertPart{
     width: 40vw;
@@ -163,12 +184,13 @@ margin-left: 25vw;
     margin-left: 5vw;
     margin-top: 2vh;
     margin-top: 5vh;
+    position: absolute;
 }
 
 #search{
-    width: 25vw;
+    width: 30vw;
     height: 5vh;
-    
+    position: absolute;
     border: 1.5px solid rgb(241, 166, 4);
     border-radius: 3px;
 }
@@ -179,6 +201,9 @@ margin-left: 25vw;
     background: rgb(241, 166, 4);
     border: none;
     border-radius: 3px;
+    position: absolute;
+    margin-left:25vw ;
+    margin-top: 7vh;
 }
 
 
@@ -189,4 +214,14 @@ margin-left: 25vw;
 p{
     font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
+}
+
+
+#vocabPht{
+ position: absolute;
+margin-top: 10vh;
+opacity: 1;
+height: 100vh;
+width: 100vw;
+
 }

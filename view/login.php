@@ -1,6 +1,6 @@
 <?php
 
-include ('registerUsers.php');
+include 'registerUsers.php';
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +78,7 @@ include ('registerUsers.php');
 
     </div>
         
-       
+      
        
 
 

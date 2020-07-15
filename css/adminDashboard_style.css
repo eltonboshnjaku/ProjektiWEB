@@ -1,9 +1,5 @@
- *{margin: 0; padding: 0;}   
-body {
-    /* background: rgb(34, 33, 33); */
-    background-color: white;
-    
-}
+*{margin:0; padding:0;}
+
 .header{
     list-style-type: none;
     display: flex;
@@ -30,26 +26,28 @@ body {
      margin-top: 2.5vh; 
     position: fixed;
      padding-top: 4vh; 
-     z-index: 3000;
-    
+    z-index: 3000;
 }
-
+@keyframes bar{
+    from{top:-1vh;}
+    to{top:0vh;}
+}
 .bar > li{
     list-style: none;
+    position: relative;
+    animation-name: bar;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 
 .bar_item{
     display: flex;
     justify-content: center;
-    width: 9vw;
-    
-    height: 6vh;
-     
+    width: 9vw;   
+    height: 6vh;     
     border-radius: 5px;
     text-align: center;
-  
-
     margin-left: 1.3vw;
     background: rgb(241, 166, 4);
     color: white;
@@ -90,17 +88,31 @@ body {
    
     
 }
-.header ul li ul li {
-    display: none;
-    width: 100%;
-    height: 6vh;
-    background:rgb(241, 166, 4) ;
+ .header ul li ul li  {
+ 
+   
+    list-style: none;
+  
+} 
+.header ul li ul li  a{
+    display: flex;
+    justify-content: center;
+    width: 9vw;   
+    height: 6vh;     
+    border-radius: 5px;
+    text-align: center;
+   
+    background: rgb(241, 166, 4);
+    color: white;
+    text-decoration: none;
+     font-family: 'Courier New'; 
+    font-size: 1.2vw;
     list-style: none;
     margin-top: 2px;
     border-radius: 5px;
     text-align: center;
     transition: ease 0.5s;
-    font-size: 1.4vw;
+    display: none;
 }
 .header ul li ul{
     margin-left:1.3vw ;
@@ -109,19 +121,17 @@ body {
     
 }
 
-.header ul li ul li:hover{
+.header ul li ul li a:hover{
     background: rgb(201, 132, 5);
     font-size: 1.5vw;
 }
-.courseSubMenu{
+ .courseSubMenu{
     text-decoration: none;
-    color: white;
-    font-family: 'Courier New';
-   
+    list-style: none;
   
     
-}
-.header ul li:hover ul li{
+} 
+.header ul li:hover ul li a{
     display: block;
 }
 
@@ -132,7 +142,6 @@ body {
     margin-top: 15px;
 
 }
-
 .adminPanel{
     display: flex;
     flex-direction: row;

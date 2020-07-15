@@ -82,4 +82,6 @@ class VocabularyRepository{
     echo '</table>';
    
     }
+
+   
 }

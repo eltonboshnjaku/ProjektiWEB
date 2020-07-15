@@ -5,6 +5,9 @@ include_once 'createCourses.php';
 include_once 'registerUsers.php';
 include_once 'insertWord.php';
 
+if(empty($_SESSION['loggedin'])){
+  header('location:login.php');
+}
 $username= $_SESSION['username'];
 $password=$_SESSION['password'];
 $email=$_SESSION['email'];
@@ -55,7 +58,7 @@ if($roli=='user'){
                 <li ><a class="bar_item" href="techVocabulary.php">Tech Vocabulary</a> </li>
                 <li ><a class="bar_item" href="aboutUs.php">About Us</a> </li>
                 <li ><a id="admDashboard" class="bar_item <?=$hide?>  " href="adminDashboard.php">Dashboard</a> </li> 
-                <li><a class="bar_item" href="login.php">Log Out</a>
+                <li><a class="bar_item" href="logout.php">Log Out</a>
                 
  
             </ul>
@@ -74,8 +77,10 @@ if($roli=='user'){
               <li id="courses" onclick="">Courses
             
                   <ul id="cList" > 
+                  <li onclick="showAllCourses() "id="editC">Courses</li>
                     <li onclick=" newCourse()" id="newC" >New Course</li>
                     <li onclick="editCourse() "id="editC">Edit Courses</li>
+                    
                   </ul> 
                </li>
               
@@ -83,8 +88,10 @@ if($roli=='user'){
              <li id="vocab" onclick="">Vocabulary
              
                   <ul id="vList">
+                      <li onclick="showAllWords()">Words</li>
                       <li onclick="showVocabulary() ">New Word</li>
                       <li onclick="showEditWord()">Edit Word</li>
+                      
                   </ul>
              </li> 
               <li id="messag" onclick="showMessages() ">Messages</li> 

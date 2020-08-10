@@ -161,7 +161,7 @@ echo $cv->getCourses();
  
   </textarea>
     <label for="courseBody">Insert Photo:</label>
-    <input type="file" name="fileInput" id="fileInput">
+    <input type="file" name="fileInput" id="fileInput" accept="image/png,image/jpeg" >
     <div class="buttons">
     <input type="submit" value="clear" id="clearButton" value="  ">
    <input type="submit" value="save" id="saveButton" name="saveButton"  onclick=" newCourse()">
